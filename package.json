@@ -1,0 +1,23 @@
+{
+  "name": "p3_ohmyfood",
+  "version": "1.0.0",
+  "description": "Code for project 3, menu website",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/divineaverage/P3_OhMyFood.git"
+  },
+  "author": "Lindsay Jawor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/divineaverage/P3_OhMyFood/issues"
+  },
+  "homepage": "https://github.com/divineaverage/P3_OhMyFood#readme",
+  "dependencies": {
+    "normalize-scss": "^7.0.1"
+  },
+
+}
