@@ -1,0 +1,28 @@
+$primary-color: #9356DC;
+$secondary-color: #FF79DA;
+$tertiary-color: #99E2D0;
+$light-background: #eeeeee;
+$medium-background: #e0e0e0;
+$dark-background: #212121;
+
+
+* {
+    padding: none;
+    box-sizing: border-box;
+}
+
+.footer {
+    background: $dark-background;
+    color: white;
+    .logo__footer {
+        display: flex;
+        width: 30%;
+        justify-content: start;
+        .logo {
+            object-fit: contain;
+            width: 30%;
+            height: auto;
+            
+        }
+    }
+}

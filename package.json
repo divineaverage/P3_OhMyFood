@@ -2,7 +2,7 @@
   "name": "p3_ohmyfood",
   "version": "1.0.0",
   "description": "Project 3 OpenClassrooms WebDev - Lindsay Jawor",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
     "sass": "sass --watch ./sass/main.scss:./public/css/style.css",
     "prefix": "postcss ./public/css/style.css --use autoprefixer -d ./public/css/prefixed/"
