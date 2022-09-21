@@ -11,6 +11,10 @@ $dark-background: #212121;
     box-sizing: border-box;
 }
 
+@mixin card__shadow {
+box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
 .footer {
     background: $dark-background;
     color: white;
