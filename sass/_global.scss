@@ -15,6 +15,13 @@ $dark-background: #212121;
 box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 
+@mixin favorite__heart {
+    .favorite {
+        display: none;
+    }
+}
+
+
 .footer {
     background: $dark-background;
     color: white;
