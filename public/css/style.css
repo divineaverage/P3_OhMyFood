@@ -25,17 +25,20 @@
 .logo__nav {
   display: flex;
   flex-direction: row;
+  align-items: center;
   width: 100%;
-  margin: 10px 0px 10px 0px;
+  margin: 10px 0 10px 0;
 }
 .logo__nav .fa-arrow-left {
-  padding: 0em 5em 0em 1em;
+  position: relative;
+  justify-self: start;
 }
 .logo__nav .logo {
   object-fit: contain;
   width: 40%;
   height: auto;
-  justify-content: center;
+  position: relative;
+  justify-self: center;
 }
 
 .hero__img {
@@ -52,6 +55,11 @@
   background: #eeeeee;
 }
 
+.menu__head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 .menu__head .menu__name {
   font-family: "Shrikhand", Times, serif;
 }
@@ -61,8 +69,18 @@
 
 .menu__subhead {
   text-transform: uppercase;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 300;
+}
+
+.dish__container .dish__name {
+  font-size: 14px;
+}
+.dish__container .dish__descript {
+  font-size: 12px;
+}
+.dish__container .dish__price {
+  font-size: 12px;
 }
 
 /*# sourceMappingURL=style.css.map */
