@@ -1,5 +1,5 @@
 * {
-  padding: none;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -31,8 +31,8 @@
   border-radius: 20px;
   margin: 15px;
   padding: 0px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
   font-size: 14px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 .restaurant__card .home__imgbox {
   height: 200px;
@@ -45,8 +45,22 @@
   width: 100%;
   height: 100%;
 }
-.restaurant__card .restaurantcard__text .favorite {
-  display: none;
+.restaurant__card .restaurantcard__text .hearts {
+  display: flex;
+}
+.restaurant__card .restaurantcard__text .hearts .nonfavorite {
+  width: 100%;
+}
+.restaurant__card .restaurantcard__text .hearts .favorite {
+  width: 100%;
+  margin-left: -100%;
+  opacity: 0;
+}
+.restaurant__card .restaurantcard__text .hearts .favorite:hover {
+  opacity: 1;
+}
+.restaurant__card .restaurantcard__text .hearts .favorite:visited {
+  opacity: 1;
 }
 .restaurant__card .restaurantcard__text .restaurant__name {
   font-weight: 500;
@@ -61,22 +75,20 @@
 }
 
 .logo__nav {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  display: inline-block;
   width: 100%;
-  margin: 10px 0 10px 0;
 }
-.logo__nav .fa-arrow-left {
-  position: relative;
-  justify-self: start;
+.logo__nav .arrow {
+  display: inline-block;
+  text-align: left;
+  margin-left: 10px;
 }
 .logo__nav .logo {
+  display: inline-block;
   object-fit: contain;
+  text-align: center;
   width: 40%;
   height: auto;
-  position: relative;
-  justify-self: center;
 }
 
 .restaurantpage__imgbox {
@@ -92,32 +104,43 @@
 .menu__container {
   background: #eeeeee;
 }
-
-.menu__head {
+.menu__container .menu__head {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-.menu__head .menu__name {
+.menu__container .menu__head .menu__name {
   font-family: "Shrikhand", Times, serif;
 }
-.menu__head .favorite {
-  display: none;
+.menu__container .menu__head .hearts {
+  display: flex;
 }
-
-.menu__subhead {
+.menu__container .menu__head .hearts .nonfavorite {
+  width: 100%;
+}
+.menu__container .menu__head .hearts .favorite {
+  width: 100%;
+  margin-left: -100%;
+  opacity: 0;
+}
+.menu__container .menu__head .hearts .favorite:hover {
+  opacity: 1;
+}
+.menu__container .menu__head .hearts .favorite:visited {
+  opacity: 1;
+}
+.menu__container .menu__subhead {
   text-transform: uppercase;
   font-size: 12px;
   font-weight: 300;
 }
-
-.dish__container .dish__name {
+.menu__container .dish__container .dish__name {
   font-size: 14px;
 }
-.dish__container .dish__descript {
+.menu__container .dish__container .dish__descript {
   font-size: 12px;
 }
-.dish__container .dish__price {
+.menu__container .dish__container .dish__price {
   font-size: 12px;
 }
 

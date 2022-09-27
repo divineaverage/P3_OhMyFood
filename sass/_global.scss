@@ -7,7 +7,7 @@ $dark-background: #212121;
 
 
 * {
-    padding: none;
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -16,8 +16,22 @@ box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 
 @mixin favorite__heart {
-    .favorite {
-        display: none;
+    .hearts {
+        display: flex;
+        .nonfavorite {
+            width: 100%;
+        }
+        .favorite {
+            width: 100%;
+            margin-left: -100%;
+            opacity: 0;
+            &:hover {
+                opacity: 1.0;
+            }
+            &:visited {
+                opacity: 1.0;
+            }
+        }
     }
 }
 

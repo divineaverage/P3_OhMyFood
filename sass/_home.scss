@@ -11,13 +11,15 @@
     border-radius: 20px;
     margin: 15px;
     padding: 0px;
-    @include card__shadow;
     font-size: 14px;
+    @include card__shadow;
+
     .home__imgbox {
         height: 200px;
         overflow: hidden; 
         border-top-left-radius: 15px;
         border-top-right-radius: 15px;
+        
         .restaurant__img {
             object-fit: cover;
             width: 100%;
@@ -26,9 +28,11 @@
     }
     .restaurantcard__text {
         @include favorite__heart;
+        
         .restaurant__name {
             font-weight: 500;
         }
+        
         .restaurant__city {
             font-weight: 200;
         }
