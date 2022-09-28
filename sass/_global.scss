@@ -81,27 +81,40 @@ button {
 
 .footer {
     background: $dark-background;
+    display: flex;
+    flex-direction: column;
     color: white;
-    margin: 0;
+    margin: 0px;
     padding: 0px 0px 20px 0px;
+    font-size: 14px;
     
     .logo__footer {
+        padding: 20px 0px 0px 20px;
         display: flex;
-        width: 30%;
+        width: 25%;
         justify-content: start;
-        padding: 20px 0px 10px 20px;
+        
         .logo {
             object-fit: contain;
-            width: 30%;
+            width: 25%;
             height: auto;
         }
     }
-    .footer__icon {
-        padding: 5px 10px 5px 20px;
+    .fa-utensils::before {              //how to write this better?//
+        padding: 5px 10px 5px 0px;
     }
-    .footer__copy {
-        padding: 5px 10px 5px 20px;
+
+    .fa-handshake-angle::before {
+        padding: 5px 10px 5px 0px;
     }
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    padding: 5px 10px 5px 20px;
 }
 
 li + li {

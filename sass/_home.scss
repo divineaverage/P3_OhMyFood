@@ -24,7 +24,7 @@
         background-color: $medium-background;
         margin: 0px 0px 0px 20px;
         &::placeholder {
-            font-color: black;  
+            color: black;  
             font-size: 16px;          /*/why isn't this working?/*/
         }
     }

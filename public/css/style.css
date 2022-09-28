@@ -23,25 +23,36 @@ button:hover {
 
 .footer {
   background: #282828;
+  display: flex;
+  flex-direction: column;
   color: white;
-  margin: 0;
+  margin: 0px;
   padding: 0px 0px 20px 0px;
+  font-size: 14px;
 }
 .footer .logo__footer {
+  padding: 20px 0px 0px 20px;
   display: flex;
-  width: 30%;
+  width: 25%;
   justify-content: start;
-  padding: 20px 0px 10px 20px;
 }
 .footer .logo__footer .logo {
   object-fit: contain;
-  width: 30%;
+  width: 25%;
   height: auto;
 }
-.footer .footer__icon {
-  padding: 5px 10px 5px 20px;
+.footer .fa-utensils::before {
+  padding: 5px 10px 5px 0px;
 }
-.footer .footer__copy {
+.footer .fa-handshake-angle::before {
+  padding: 5px 10px 5px 0px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
   padding: 5px 10px 5px 20px;
 }
 
@@ -75,7 +86,7 @@ li + li {
   margin: 0px 0px 0px 20px;
 }
 .searchbox .search_bar[type=text]::placeholder {
-  font-color: black;
+  color: black;
   font-size: 16px; /*/why isn't this working?/*/
 }
 
@@ -269,7 +280,7 @@ li + li {
   background: #f5f5f5;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  margin-top: -45px;
+  margin: -45px 0px 0px 0px;
   padding: 0px 10px 0px 10px;
   z-index: 5;
   height: 100vh;
@@ -366,6 +377,10 @@ li + li {
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   padding: 0px 0px 10px 0px;
+}
+.menu__container button {
+  width: 50%;
+  margin: 30px 0px 50px 0px;
 }
 
 /*# sourceMappingURL=style.css.map */
