@@ -32,7 +32,7 @@
   margin: 15px;
   padding: 0px;
   font-size: 14px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
 }
 .restaurant__card .home__imgbox {
   height: 200px;
@@ -50,14 +50,18 @@
 }
 .restaurant__card .restaurantcard__text .hearts .nonfavorite {
   width: 100%;
+  font-size: 22px;
+  font-weight: 200;
 }
 .restaurant__card .restaurantcard__text .hearts .favorite {
   width: 100%;
   margin-left: -100%;
   opacity: 0;
+  font-size: 22px;
 }
 .restaurant__card .restaurantcard__text .hearts .favorite:hover {
   opacity: 1;
+  transition: 0.2s;
 }
 .restaurant__card .restaurantcard__text .hearts .favorite:visited {
   opacity: 1;
@@ -99,32 +103,47 @@
   object-fit: contain;
   width: 100%;
   height: 100%;
+  z-index: -1;
 }
 
 .menu__container {
-  background: #eeeeee;
+  display: flex;
+  flex-direction: column;
+  background: #f5f5f5;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  margin-top: -45px;
+  padding: 0px 10px 0px 10px;
+  z-index: 5;
+  height: 100vh;
 }
 .menu__container .menu__head {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  padding: 20px 10px 10px 10px;
 }
 .menu__container .menu__head .menu__name {
   font-family: "Shrikhand", Times, serif;
+  font-size: 24px;
 }
 .menu__container .menu__head .hearts {
   display: flex;
 }
 .menu__container .menu__head .hearts .nonfavorite {
   width: 100%;
+  font-size: 22px;
+  font-weight: 200;
 }
 .menu__container .menu__head .hearts .favorite {
   width: 100%;
   margin-left: -100%;
   opacity: 0;
+  font-size: 22px;
 }
 .menu__container .menu__head .hearts .favorite:hover {
   opacity: 1;
+  transition: 0.2s;
 }
 .menu__container .menu__head .hearts .favorite:visited {
   opacity: 1;
@@ -133,15 +152,52 @@
   text-transform: uppercase;
   font-size: 12px;
   font-weight: 300;
+  padding: 10px 0px 5px 0px;
+  background: linear-gradient(#99E2D0 0 0) bottom left/7% 2px no-repeat;
 }
-.menu__container .dish__container .dish__name {
+.menu__container .dish__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: 15px;
+  margin: 5px 0px 5px 0px;
+  padding: 0px 0px 10px 0px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+.menu__container .dish__container .dish-cont__col-1 {
+  padding: 0px 0px 0px 10px;
+  flex-direction: column;
+}
+.menu__container .dish__container .dish-cont__col-1 .dish__name {
   font-size: 14px;
+  margin: 10px 0px 0px 0px;
+  font-weight: 500;
 }
-.menu__container .dish__container .dish__descript {
+.menu__container .dish__container .dish-cont__col-1 .dish__descript {
   font-size: 12px;
 }
-.menu__container .dish__container .dish__price {
+.menu__container .dish__container .dish-cont__col-2 {
+  padding: 0px 10px 0px 0px;
+  display: flex;
+}
+.menu__container .dish__container .dish-cont__col-2 .dish__price {
   font-size: 12px;
+  align-self: flex-end;
+}
+.menu__container .dish__container .dish-cont__col-2:hover {
+  margin-right: 50px;
+}
+.menu__container .dish__container .dish-cont__col-2 .dish__checkbox {
+  opacity: 0;
+}
+.menu__container .dish__container .dish-cont__col-2:hover {
+  display: flex;
+  height: 100%;
+  background-color: #99E2D0;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  padding: 0px 0px 10px 0px;
 }
 
 /*# sourceMappingURL=style.css.map */

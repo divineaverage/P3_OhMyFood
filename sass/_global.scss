@@ -1,7 +1,7 @@
 $primary-color: #9356DC;
 $secondary-color: #FF79DA;
 $tertiary-color: #99E2D0;
-$light-background: #eeeeee;
+$light-background: #f5f5f5;
 $medium-background: #e0e0e0;
 $dark-background: #212121;
 
@@ -12,7 +12,7 @@ $dark-background: #212121;
 }
 
 @mixin card__shadow {
-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
 }
 
 @mixin favorite__heart {
@@ -20,13 +20,17 @@ box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
         display: flex;
         .nonfavorite {
             width: 100%;
+            font-size: 22px;
+            font-weight: 200;
         }
         .favorite {
             width: 100%;
             margin-left: -100%;
             opacity: 0;
+            font-size: 22px;
             &:hover {
                 opacity: 1.0;
+                transition: .2s;
             }
             &:visited {
                 opacity: 1.0;
@@ -34,7 +38,6 @@ box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
         }
     }
 }
-
 
 .footer {
     background: $dark-background;
