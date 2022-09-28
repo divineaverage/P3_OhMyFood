@@ -38,11 +38,6 @@
     align-items: center;
     padding: 30px 0px 50px 0px;
     
-    h3 {
-        line-height: 24px;
-        padding: 10px;
-    }
-    
     p {
         font-size: 18px;
         padding: 0px 40px 0px 40px;
@@ -52,11 +47,7 @@
 }
 
 .howitworks {
-    padding: 20px 30px 60px 30px;
-    
-    h3 {
-        margin: 50px 0px 30px 0px;
-    }
+    padding: 20px 30px 50px 30px; 
     
     .how__item {
         display: flex;
@@ -104,7 +95,7 @@
 }
 
 .restaurants {
-    padding: 60px 20px 20px 20px;
+    padding: 30px 20px 20px 20px;
     background-color: $light-background;
     width: 100%;
     
