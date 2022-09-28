@@ -25,6 +25,7 @@
 .restaurantpage__imgbox {
     display: flex;
     width: 100%;
+    
     .restaurantpage__img {
         object-fit: contain;
         width: 100%;
@@ -43,17 +44,20 @@
     padding: 0px 10px 0px 10px;
     z-index: 5;
     height: 100vh;
+    
     .menu__head {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         padding: 20px 10px 10px 10px;
+        
         .menu__name {
             font-family: "Shrikhand", Times, serif;
             font-size: 24px;
         }
         @include favorite__heart;
     }
+    
     .menu__subhead {
     text-transform: uppercase;
     font-size: 12px;
@@ -61,6 +65,7 @@
     padding: 10px 0px 5px 0px;
     background: linear-gradient($tertiary-color 0 0) bottom left/ 7% 2px no-repeat,
     }
+    
     .dish__container {
         display: flex;
         flex-direction: row;
@@ -70,28 +75,35 @@
         margin: 5px 0px 5px 0px;
         padding: 0px 0px 10px 0px;
         @include card__shadow;
+        
         .dish-cont__col-1 {
             padding: 0px 0px 0px 10px;
             flex-direction: column;
+            
             .dish__name {
                 font-size: 14px;
                 margin: 10px 0px 0px 0px;
                 font-weight: 500;
             }
+            
             .dish__descript {
                 font-size: 12px;
             }
         }
+        
         .dish-cont__col-2 {
             padding: 0px 10px 0px 0px;
             display: flex;
+            
             .dish__price {
                 font-size: 12px;
                 align-self: flex-end;
             }
-                &:hover {
+                
+            &:hover {
                     margin-right: 50px;
-                }
+            }
+            
             .dish__checkbox {
                 opacity: 0;
             }

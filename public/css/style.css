@@ -5,7 +5,7 @@
 
 h3 {
   margin: 0;
-  font-size: 24; /*/ why is this not working? /*/
+  font-size: 22px; /*/ why is this not working? /*/
 }
 
 button {
@@ -22,18 +22,31 @@ button:hover {
 }
 
 .footer {
-  background: #212121;
+  background: #282828;
   color: white;
+  margin: 0;
+  padding: 0px 0px 20px 0px;
 }
 .footer .logo__footer {
   display: flex;
   width: 30%;
   justify-content: start;
+  padding: 20px 0px 10px 20px;
 }
 .footer .logo__footer .logo {
   object-fit: contain;
   width: 30%;
   height: auto;
+}
+.footer .footer__icon {
+  padding: 5px 10px 5px 20px;
+}
+.footer .footer__copy {
+  padding: 5px 10px 5px 20px;
+}
+
+li + li {
+  margin: 10px 0px 0px 0px;
 }
 
 * {
@@ -51,14 +64,14 @@ button:hover {
 
 .searchbox {
   display: flex;
-  background-color: #e8e8e8;
+  background-color: #e0e0e0;
   justify-content: center;
   padding: 15px 0px 15px 0px;
   border-top: solid 3px #c0c0c0;
 }
 .searchbox .search_bar[type=text] {
   border: none;
-  background-color: #e8e8e8;
+  background-color: #e0e0e0;
   margin: 0px 0px 0px 20px;
 }
 .searchbox .search_bar[type=text]::placeholder {
@@ -85,16 +98,19 @@ button:hover {
   font-weight: 200;
 }
 
+.howitworks {
+  padding: 20px 30px 60px 30px;
+}
 .howitworks h3 {
-  margin: 30px 0px 20px 20px;
+  margin: 50px 0px 30px 0px;
 }
 .howitworks .how__item {
   display: flex;
   flex-direction: row;
   background-color: #f5f5f5;
   border-radius: 15px;
-  margin: 5px 30px 20px 30px;
-  padding: 20px 0px 20px 0px;
+  margin: 5px 10px 20px 10px;
+  padding: 25px 10px 20px 10px;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
 }
 .howitworks .how__item .circle {
@@ -109,21 +125,28 @@ button:hover {
   border: none;
   border-radius: 26px;
   position: absolute;
-  margin-left: -10px;
-  padding: 2px 0px 0px 0px;
+  margin-left: -20px;
+  padding: 2px 2px 2px 2px;
 }
-.howitworks .how__item .mobile_icon {
-  margin: 0px 10px 0px 30px;
+.howitworks .how__item .how__icon {
+  margin: 0px 10px 0px 20px;
+  color: #696969;
+  font-size: 16px;
 }
 .howitworks .how__item .how__listcopy {
-  margin: 0px 10px 0px 20px;
+  margin: 0px 10px 0px 10px;
 }
 .howitworks .how__item:hover {
-  background-color: white; /*/ what's going on here? /*/
+  background-color: #ece1f9;
+}
+.howitworks .how__item:hover .how__icon {
+  color: #9356DC;
 }
 
 .restaurants {
-  margin: 20px 20px 20px 20px;
+  padding: 60px 20px 20px 20px;
+  background-color: #f5f5f5;
+  width: 100%;
 }
 .restaurants .restaurant__card {
   display: flex;
@@ -131,7 +154,7 @@ button:hover {
   flex-direction: column;
   background: white;
   border-radius: 20px;
-  margin: 15px;
+  margin: 15px 0px 15px 0px;
   padding: 0px;
   font-size: 14px;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
@@ -146,6 +169,19 @@ button:hover {
   object-fit: cover;
   width: 100%;
   height: 100%;
+}
+.restaurants .restaurant__card .newtag {
+  position: absolute;
+  padding: 5px 25px 5px 25px;
+  margin: 10px 10px 0px 67%;
+  background-color: #99E2D0;
+  color: #278870;
+  border-radius: 2px;
+}
+.restaurants .restaurant__card .restaurantcard__text {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 20px 10px 20px;
 }
 .restaurants .restaurant__card .restaurantcard__text .hearts {
   display: flex;
@@ -165,14 +201,33 @@ button:hover {
   opacity: 1;
   transition: 0.2s;
 }
-.restaurants .restaurant__card .restaurantcard__text .hearts .favorite:visited {
-  opacity: 1;
+.restaurants .restaurant__card .restaurantcard__text .hearts .favorite:hover .fa-heart {
+  background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #FF79DA), color-stop(1, #9356DC));
+  background-image: gradient(linear, left top, right bottom, color-stop(0, #FF79DA), color-stop(1, #9356DC));
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.restaurants .restaurant__card .restaurantcard__text .hearts .favorite:visited .fa-heart {
+  background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #FF79DA), color-stop(1, #9356DC));
+  background-image: gradient(linear, left top, right bottom, color-stop(0, #FF79DA), color-stop(1, #9356DC));
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
 }
 .restaurants .restaurant__card .restaurantcard__text .restaurant__name {
   font-weight: 500;
+  font-size: 16px;
+  margin: 5px 0px 5px 0px;
 }
 .restaurants .restaurant__card .restaurantcard__text .restaurant__city {
-  font-weight: 200;
+  font-weight: 300;
+  font-size: 16px;
+  margin: 0px 0px 5px 0px;
+}
+.restaurants .restaurant__card .restaurantcard__text .hearts {
+  position: absolute;
+  margin: 10px 20px 0px 75%;
 }
 
 * {
@@ -247,8 +302,19 @@ button:hover {
   opacity: 1;
   transition: 0.2s;
 }
-.menu__container .menu__head .hearts .favorite:visited {
-  opacity: 1;
+.menu__container .menu__head .hearts .favorite:hover .fa-heart {
+  background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #FF79DA), color-stop(1, #9356DC));
+  background-image: gradient(linear, left top, right bottom, color-stop(0, #FF79DA), color-stop(1, #9356DC));
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.menu__container .menu__head .hearts .favorite:visited .fa-heart {
+  background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #FF79DA), color-stop(1, #9356DC));
+  background-image: gradient(linear, left top, right bottom, color-stop(0, #FF79DA), color-stop(1, #9356DC));
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
 }
 .menu__container .menu__subhead {
   text-transform: uppercase;
