@@ -5,15 +5,10 @@ $light-background: #f5f5f5;
 $medium-background: #e0e0e0;
 $dark-background: #282828;
 $darkgrey-copy: #696969;
-    
 
-* {
-    padding: 0;
-    box-sizing: border-box;
-}
 
 @mixin card__shadow {
-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
 }
 
 @mixin heart__gradient {
@@ -42,13 +37,7 @@ box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
             font-size: 22px;
             &:hover {
                 opacity: 1.0;
-                transition: .2s;
-                .fa-heart {
-                    @include heart__gradient
-                }
-            }
-            
-            &:focus-visible {                 
+                transition: .4s;
                 .fa-heart {
                     @include heart__gradient
                 }
@@ -57,6 +46,40 @@ box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
     }
 }
 
+@keyframes grow {
+    from {transform: scale(0,0); opacity: 0;}
+    to {transform: scale(1,1); opacity: 1;}
+}
+  
+@keyframes move {
+    from {transform: translateX(0px)}
+    to {transform: translateX(45px)}
+}
+
+@keyframes disappear {
+    0% {
+        opacity: 1;
+        scaleX: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        scaleX: 0;
+    }
+}
+
+
+* {
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    all: unset;
+    display: flex;
+    flex-direction: column;
+}
 
 h3 {
     margin: 20px 0px 30px 0px;
@@ -69,15 +92,17 @@ button {
     background-image: linear-gradient(to bottom right, $secondary-color, $primary-color);
     color: white;
     border: none;
+    @include card__shadow;
     
     &:hover {
         cursor: pointer;
         background-image: linear-gradient(
             to bottom right, 
-            darken($secondary-color, 10%),
-            darken($primary-color, 10%),
+            lighten($secondary-color, 10%),
+            lighten($primary-color, 10%),
         );
         transition: .3s;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
     }
 }
 

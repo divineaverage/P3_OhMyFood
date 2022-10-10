@@ -77,11 +77,10 @@
         justify-content: space-between;
         background-color: white;
         border-radius: 15px;
-        padding: 0px 0px 10px 0px;
         @include card__shadow;
         
         .dish-cont__col-1 {
-            padding: 0px 0px 0px 10px;
+            padding: 0px 0px 10px 10px;
             flex-direction: column;
             
             .dish__name {
@@ -96,34 +95,62 @@
         }
         
         .dish-cont__col-2 {
-            padding: 0px 10px 0px 0px;
+            padding: 0px 10px 10px 0px;
             display: flex;
+            transform: all 5s;
+            
             
             .dish__price {
                 font-size: 12px;
                 align-self: flex-end;
             }
-                
-            &:hover {
-                    margin-right: 50px;
-            }
             
             .dish__checkbox {
-                opacity: 0;
+                visibility: hidden;
+                transform: scaleX(0);
+                transition: transform .4s;
             }
-                &:hover {
-                display: flex;
-                height: 100%;
+
+            &:hover {
                 background-color: $tertiary-color;
                 border-top-right-radius: 15px;
                 border-bottom-right-radius: 15px;
-                padding: 0px 0px 10px 0px;
+                padding: 20px 20px 20px 20px;
+                
+
+                .dish__price {
+                    display: none;
                 }
+                
+                .dish__checkbox {
+                    visibility: visible;
+                    display: flex;
+                    font-size: 14px;
+                    font-weight: 400;
+                    background-color: $tertiary-color;
+                    color: $tertiary-color;
+                    width: 20px;
+                    height: 20px;
+                    border-color: white;
+                    border-style: solid;
+                    border-width: 10px;
+                    border-radius: 26px;  
+                    justify-content: center;
+                    transform: scaleX(1) rotate(360deg);
+                    transition: transform .4s ease-in .2s;
+
+                    .fa-check {
+                        align-self: center;                    
+                    }
+                }
+            }
         }
     }
+    
     .dish__container + .dish__container {
         margin: 15px 0px 0px 0px;
     }
+
     .button__box {
         text-align: center;
         margin: 40px 0px 50px 0px;

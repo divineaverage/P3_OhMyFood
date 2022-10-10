@@ -1,0 +1,307 @@
+@keyframes grow {
+  from {
+    transform: scale(0, 0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+}
+@keyframes move {
+  from {
+    transform: translateX(0px);
+  }
+  to {
+    transform: translateX(45px);
+  }
+}
+@keyframes disappear {
+  0% {
+    opacity: 1;
+    scaleX: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    scaleX: 0;
+  }
+}
+* {
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  all: unset;
+  display: flex;
+  flex-direction: column;
+}
+
+h3 {
+  margin: 20px 0px 30px 0px;
+  font-size: 22px;
+}
+
+button {
+  border-radius: 50px;
+  padding: 12px 25px 12px 25px;
+  background-image: linear-gradient(to bottom right, #FF79DA, #9356DC);
+  color: white;
+  border: none;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+button:hover {
+  cursor: pointer;
+  background-image: linear-gradient(to bottom right, #fface8, #ae80e5);
+  transition: 0.3s;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+.footer {
+  background: #282828;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  margin: 0px;
+  padding: 0px 0px 20px 0px;
+  font-size: 14px;
+}
+.footer .logo__footer {
+  padding: 20px 0px 0px 20px;
+  display: flex;
+  width: 25%;
+  justify-content: start;
+}
+.footer .logo__footer .logo {
+  object-fit: contain;
+  width: 25%;
+  height: auto;
+}
+.footer .fa-solid::before {
+  padding: 5px 10px 5px 0px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  padding: 5px 10px 5px 20px;
+}
+
+li + li {
+  margin: 10px 0px 0px 0px;
+}
+
+* {
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+
+.loader__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  animation: disappear 5000ms ease-out 2s forwards;
+}
+.loader__container .loader {
+  height: 15px;
+  width: 105px;
+  display: flex;
+  position: relative;
+}
+.loader__container .loader .dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #99E2D0;
+  animation: move 700ms linear 0ms infinite;
+  margin-right: 30px;
+}
+.loader__container .loader .dot:first-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: grow 700ms linear 0ms infinite;
+}
+.loader__container .loader .dot:last-child {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 0;
+  animation: grow 700ms linear 0s infinite reverse;
+}
+
+.home__logo {
+  display: flex;
+  justify-content: center;
+}
+.home__logo .logo__top {
+  margin: 10px 0px 10px 0px;
+}
+
+.searchbox {
+  display: flex;
+  background-color: #e0e0e0;
+  justify-content: center;
+  padding: 15px 0px 15px 0px;
+  border-top: solid 3px #c0c0c0;
+}
+.searchbox .search_bar[type=text] {
+  border: none;
+  background-color: #e0e0e0;
+  margin: 0px 0px 0px 20px;
+}
+.searchbox .search_bar[type=text]::placeholder {
+  color: black;
+  font-size: 16px; /*/ pseudo element missing? /*/
+}
+
+.home__title {
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 0px 50px 0px;
+}
+.home__title p {
+  font-size: 18px;
+  padding: 0px 40px 0px 40px;
+  text-align: center;
+  font-weight: 200;
+}
+
+.howitworks {
+  padding: 20px 30px 50px 30px;
+}
+.howitworks .how__item {
+  display: flex;
+  flex-direction: row;
+  background-color: #f5f5f5;
+  border-radius: 15px;
+  margin: 5px 10px 20px 10px;
+  padding: 25px 10px 20px 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+.howitworks .how__item .circle {
+  box-sizing: border-box;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  background-color: #9356DC;
+  width: 20px;
+  height: 20px;
+  border: none;
+  border-radius: 26px;
+  position: absolute;
+  margin-left: -20px;
+  padding: 2px 2px 2px 2px;
+}
+.howitworks .how__item .how__icon {
+  margin: 0px 10px 0px 20px;
+  color: #696969;
+  font-size: 16px;
+}
+.howitworks .how__item .how__listcopy {
+  margin: 0px 10px 0px 10px;
+}
+.howitworks .how__item:hover {
+  background-color: #ece1f9;
+}
+.howitworks .how__item:hover .how__icon {
+  color: #9356DC;
+}
+
+.restaurants {
+  padding: 30px 20px 40px 20px;
+  background-color: #f5f5f5;
+  width: 100%;
+}
+.restaurants .restaurant__card {
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  background: white;
+  border-radius: 20px;
+  margin: 15px 0px 15px 0px;
+  padding: 0px;
+  font-size: 14px;
+  position: relative;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+.restaurants .restaurant__card .home__imgbox {
+  height: 200px;
+  width: 100%;
+  overflow: hidden;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+.restaurants .restaurant__card .home__imgbox .restaurant__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.restaurants .restaurant__card .newtag {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 25px 5px 25px;
+  background-color: #99E2D0;
+  color: #278870;
+  border-radius: 2px;
+}
+.restaurants .restaurant__card .restaurantcard__text {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 10px 10px 20px;
+  position: relative;
+}
+.restaurants .restaurant__card .restaurantcard__text .hearts {
+  display: flex;
+  cursor: pointer;
+}
+.restaurants .restaurant__card .restaurantcard__text .hearts .nonfavorite {
+  width: 100%;
+  font-size: 22px;
+  font-weight: 200;
+}
+.restaurants .restaurant__card .restaurantcard__text .hearts .favorite {
+  width: 100%;
+  margin-left: -100%;
+  opacity: 0;
+  font-size: 22px;
+}
+.restaurants .restaurant__card .restaurantcard__text .hearts .favorite:hover {
+  opacity: 1;
+  transition: 0.4s;
+}
+.restaurants .restaurant__card .restaurantcard__text .hearts .favorite:hover .fa-heart {
+  background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #FF79DA), color-stop(1, #9356DC));
+  background-image: gradient(linear, left top, right bottom, color-stop(0, #FF79DA), color-stop(1, #9356DC));
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.restaurants .restaurant__card .restaurantcard__text .restaurant__name {
+  font-weight: 500;
+  font-size: 16px;
+  margin: 5px 0px 5px 0px;
+}
+.restaurants .restaurant__card .restaurantcard__text .restaurant__city {
+  font-weight: 300;
+  font-size: 16px;
+  margin: 0px 0px 5px 0px;
+}
+.restaurants .restaurant__card .restaurantcard__text .hearts {
+  position: absolute;
+  top: 10px;
+  right: 0px;
+}
+
+/*# sourceMappingURL=index.css.map */
