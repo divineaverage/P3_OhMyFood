@@ -26,6 +26,15 @@
   }
   100% {
     scaleX: 0;
+    display: none;
+  }
+}
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 * {
@@ -106,7 +115,7 @@ li + li {
   align-items: center;
   width: 100vw;
   height: 100vh;
-  animation: disappear 5000ms ease-out 2s forwards;
+  animation: disappear 2s ease-out 2s;
 }
 .loader__container .loader {
   height: 15px;
@@ -265,17 +274,21 @@ li + li {
 .restaurants .restaurant__card .restaurantcard__text .hearts {
   display: flex;
   cursor: pointer;
+  font-size: 22px;
+}
+@media (min-width: 768px) {
+  .restaurants .restaurant__card .restaurantcard__text .hearts {
+    font-size: 30px;
+  }
 }
 .restaurants .restaurant__card .restaurantcard__text .hearts .nonfavorite {
   width: 100%;
-  font-size: 22px;
   font-weight: 200;
 }
 .restaurants .restaurant__card .restaurantcard__text .hearts .favorite {
   width: 100%;
   margin-left: -100%;
   opacity: 0;
-  font-size: 22px;
 }
 .restaurants .restaurant__card .restaurantcard__text .hearts .favorite:hover {
   opacity: 1;

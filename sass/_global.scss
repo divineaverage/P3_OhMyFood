@@ -6,6 +6,10 @@ $medium-background: #e0e0e0;
 $dark-background: #282828;
 $darkgrey-copy: #696969;
 
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 992px;
+$breakpoint-widescreen: 1200px;
+
 
 @mixin card__shadow {
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
@@ -23,10 +27,14 @@ $darkgrey-copy: #696969;
     .hearts {
         display: flex;
         cursor: pointer;
+        font-size: 22px;
+        
+        @media (min-width: $breakpoint-tablet) {
+            font-size: 30px;
+        }
         
         .nonfavorite {
             width: 100%;
-            font-size: 22px;
             font-weight: 200;
         }
         
@@ -34,7 +42,7 @@ $darkgrey-copy: #696969;
             width: 100%;
             margin-left: -100%;
             opacity: 0;
-            font-size: 22px;
+            
             &:hover {
                 opacity: 1.0;
                 transition: .4s;
@@ -66,6 +74,16 @@ $darkgrey-copy: #696969;
     }
     100% {
         scaleX: 0;
+        display: none;
+    }
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
 }
 

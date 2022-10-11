@@ -26,6 +26,15 @@
   }
   100% {
     scaleX: 0;
+    display: none;
+  }
+}
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 * {
@@ -114,25 +123,60 @@ li + li {
   bottom: 0;
   left: 10px;
 }
+@media (min-width: 768px) {
+  .logo__nav .arrow {
+    font-size: 30px;
+    top: 15px;
+  }
+}
+@media (min-width: 992px) {
+  .logo__nav .arrow {
+    top: 15px;
+  }
+}
 .logo__nav .logo {
   object-fit: contain;
   width: 40%;
   height: auto;
   margin: 10px 0px 10px 0px;
 }
+@media (min-width: 768px) {
+  .logo__nav .logo {
+    width: 30%;
+  }
+}
+@media (min-width: 992px) {
+  .logo__nav .logo {
+    width: 18%;
+  }
+}
 
 .restaurantpage__imgbox {
   display: flex;
   width: 100%;
+  overflow: hidden;
 }
 .restaurantpage__imgbox .restaurantpage__img {
-  object-fit: contain;
+  object-fit: cover;
   width: 100%;
   height: 100%;
   z-index: -1;
 }
+@media (min-width: 768px) {
+  .restaurantpage__imgbox .restaurantpage__img {
+    height: auto;
+    width: 210%;
+  }
+}
+@media (min-width: 992px) {
+  .restaurantpage__imgbox .restaurantpage__img {
+    height: auto;
+    width: 135%;
+  }
+}
 
 .menu__container {
+  display: inline-block;
   flex-direction: column;
   background: #f5f5f5;
   border-top-left-radius: 20px;
@@ -144,30 +188,63 @@ li + li {
   width: 100%;
   justify-content: center;
 }
+@media (min-width: 768px) {
+  .menu__container {
+    padding: 0px 10px 0px 10px;
+    margin: 0px 40px 20px 40px;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 10%;
+    justify-self: center;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+}
+@media (min-width: 992px) {
+  .menu__container {
+    top: 20%;
+    left: 2%;
+  }
+}
 .menu__container .menu__head {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 20px 10px 10px 10px;
 }
+@media (min-width: 992px) {
+  .menu__container .menu__head {
+    padding: 20px 10px 10px 20px;
+  }
+}
 .menu__container .menu__head .menu__name {
   font-family: "Shrikhand", Times, serif;
   font-size: 24px;
 }
+@media (min-width: 768px) {
+  .menu__container .menu__head .menu__name {
+    font-size: 30px;
+  }
+}
 .menu__container .menu__head .hearts {
   display: flex;
   cursor: pointer;
+  font-size: 22px;
+}
+@media (min-width: 768px) {
+  .menu__container .menu__head .hearts {
+    font-size: 30px;
+  }
 }
 .menu__container .menu__head .hearts .nonfavorite {
   width: 100%;
-  font-size: 22px;
   font-weight: 200;
 }
 .menu__container .menu__head .hearts .favorite {
   width: 100%;
   margin-left: -100%;
   opacity: 0;
-  font-size: 22px;
 }
 .menu__container .menu__head .hearts .favorite:hover {
   opacity: 1;
@@ -187,34 +264,103 @@ li + li {
   padding: 20px 0px 5px 0px;
   background: linear-gradient(#99E2D0 0 0) bottom left/10% 2px no-repeat;
 }
+@media (min-width: 768px) {
+  .menu__container .menu__subhead {
+    font-size: 16px;
+  }
+}
 .menu__container .dish__container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   background-color: white;
   border-radius: 15px;
+  opacity: 0;
+  animation: fadein 2s linear forwards;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+.menu__container .dish__container:nth-of-type(2) {
+  animation-delay: 0.2s;
+}
+.menu__container .dish__container:nth-of-type(2) {
+  animation-delay: 0.4s;
+}
+.menu__container .dish__container:nth-of-type(3) {
+  animation-delay: 0.6s;
+}
+.menu__container .dish__container:nth-of-type(4) {
+  animation-delay: 0.8s;
+}
+.menu__container .dish__container:nth-of-type(5) {
+  animation-delay: 1s;
+}
+.menu__container .dish__container:nth-of-type(6) {
+  animation-delay: 1.2s;
+}
+.menu__container .dish__container:nth-of-type(7) {
+  animation-delay: 1.4s;
+}
+.menu__container .dish__container:nth-of-type(8) {
+  animation-delay: 1.6s;
+}
+.menu__container .dish__container:nth-of-type(9) {
+  animation-delay: 1.8s; /*/ why is this not opacity 1 to start? /*/
 }
 .menu__container .dish__container .dish-cont__col-1 {
   padding: 0px 0px 10px 10px;
   flex-direction: column;
+}
+@media (min-width: 992px) {
+  .menu__container .dish__container .dish-cont__col-1 {
+    padding: 0px 0px 10px 30px;
+  }
 }
 .menu__container .dish__container .dish-cont__col-1 .dish__name {
   font-size: 14px;
   margin: 10px 0px 0px 0px;
   font-weight: 500;
 }
+@media (min-width: 768px) {
+  .menu__container .dish__container .dish-cont__col-1 .dish__name {
+    font-size: 16px;
+  }
+}
 .menu__container .dish__container .dish-cont__col-1 .dish__descript {
   font-size: 12px;
+  padding: 0px 10px 0px 0px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap; /*/ how to make this break with ellipses? /*/
+}
+@media (min-width: 768px) {
+  .menu__container .dish__container .dish-cont__col-1 .dish__descript {
+    font-size: 16px;
+    padding: 0px 30px 0px 0px;
+  }
+}
+@media (min-width: 992px) {
+  .menu__container .dish__container .dish-cont__col-1 .dish__descript {
+    padding: 0px 60px 0px 0px;
+  }
 }
 .menu__container .dish__container .dish-cont__col-2 {
   padding: 0px 10px 10px 0px;
   display: flex;
   transform: all 5s;
 }
+@media (min-width: 992px) {
+  .menu__container .dish__container .dish-cont__col-2 {
+    padding: 0px 10px 10px 30px;
+  }
+}
 .menu__container .dish__container .dish-cont__col-2 .dish__price {
   font-size: 12px;
   align-self: flex-end;
+}
+@media (min-width: 768px) {
+  .menu__container .dish__container .dish-cont__col-2 .dish__price {
+    font-size: 14px;
+  }
 }
 .menu__container .dish__container .dish-cont__col-2 .dish__checkbox {
   visibility: hidden;
@@ -245,7 +391,7 @@ li + li {
   border-radius: 26px;
   justify-content: center;
   transform: scaleX(1) rotate(360deg);
-  transition: transform 0.4s ease-in 0.2s;
+  transition: transform 0.2s ease-in 0.2s;
 }
 .menu__container .dish__container .dish-cont__col-2:hover .dish__checkbox .fa-check {
   align-self: center;
