@@ -336,6 +336,9 @@ li + li {
   }
 }
 .restaurants .restaurant__card .home__imgbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 200px;
   width: 100%;
   overflow: hidden;
