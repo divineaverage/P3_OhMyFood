@@ -16,25 +16,42 @@
     transform: translateX(45px);
   }
 }
-@keyframes disappear {
-  0% {
-    opacity: 1;
-    scaleX: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    scaleX: 0;
-    display: none;
-  }
-}
 @keyframes fadein {
   0% {
     opacity: 0;
   }
   100% {
     opacity: 1;
+  }
+}
+@keyframes loadcircle__anim {
+  0% {
+    top: 72px;
+    left: 72px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  4.9% {
+    top: 72px;
+    left: 72px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  5% {
+    top: 72px;
+    left: 72px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+    width: 144px;
+    height: 144px;
+    opacity: 0;
   }
 }
 * {
@@ -50,7 +67,17 @@ a {
 
 h3 {
   margin: 20px 0px 30px 0px;
-  font-size: 22px;
+  font-size: 24px;
+}
+@media (min-width: 768px) {
+  h3 {
+    font-size: 28px;
+  }
+}
+@media (min-width: 768px) {
+  h3 {
+    font-size: 32px;
+  }
 }
 
 button {
@@ -67,6 +94,11 @@ button:hover {
   transition: 0.3s;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
 }
+@media (min-width: 768px) {
+  button {
+    font-size: 20px;
+  }
+}
 
 .footer {
   background: #282828;
@@ -78,10 +110,15 @@ button:hover {
   font-size: 14px;
 }
 .footer .logo__footer {
-  padding: 20px 0px 0px 20px;
+  padding: 30px 0px 0px 20px;
   display: flex;
   width: 25%;
   justify-content: start;
+}
+@media (min-width: 768px) {
+  .footer .logo__footer {
+    width: 15%;
+  }
 }
 .footer .logo__footer .logo {
   object-fit: contain;
@@ -156,6 +193,11 @@ li + li {
   width: 100%;
   overflow: hidden;
 }
+@media (min-width: 768px) {
+  .restaurantpage__imgbox {
+    position: relative;
+  }
+}
 .restaurantpage__imgbox .restaurantpage__img {
   object-fit: cover;
   width: 100%;
@@ -171,7 +213,12 @@ li + li {
 @media (min-width: 992px) {
   .restaurantpage__imgbox .restaurantpage__img {
     height: auto;
-    width: 135%;
+    width: 190%;
+  }
+}
+@media (min-width: 1080px) {
+  .restaurantpage__imgbox .restaurantpage__img {
+    width: 160%;
   }
 }
 
@@ -195,7 +242,7 @@ li + li {
     width: auto;
     height: auto;
     position: absolute;
-    top: 10%;
+    top: 12%;
     justify-self: center;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
@@ -203,7 +250,7 @@ li + li {
 }
 @media (min-width: 992px) {
   .menu__container {
-    top: 20%;
+    top: 15%;
     left: 2%;
   }
 }
@@ -276,7 +323,7 @@ li + li {
   background-color: white;
   border-radius: 15px;
   opacity: 0;
-  animation: fadein 2s linear forwards;
+  animation: fadein 3s linear forwards;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
 }
 .menu__container .dish__container:nth-of-type(2) {
@@ -305,6 +352,12 @@ li + li {
 }
 .menu__container .dish__container:nth-of-type(9) {
   animation-delay: 1.8s; /*/ why is this not opacity 1 to start? /*/
+}
+.menu__container .dish__container:nth-of-type(10) {
+  animation-delay: 2s; /*/ why is this not opacity 1 to start? /*/
+}
+.menu__container .dish__container:nth-of-type(11) {
+  animation-delay: 2.2s; /*/ why is this not opacity 1 to start? /*/
 }
 .menu__container .dish__container .dish-cont__col-1 {
   padding: 0px 0px 10px 10px;
@@ -371,7 +424,6 @@ li + li {
   background-color: #99E2D0;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
-  padding: 20px 20px 20px 20px;
 }
 .menu__container .dish__container .dish-cont__col-2:hover .dish__price {
   display: none;

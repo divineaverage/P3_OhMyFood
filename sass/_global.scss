@@ -8,7 +8,7 @@ $darkgrey-copy: #696969;
 
 $breakpoint-tablet: 768px;
 $breakpoint-desktop: 992px;
-$breakpoint-widescreen: 1200px;
+$breakpoint-widescreen: 1080px;
 
 
 @mixin card__shadow {
@@ -64,19 +64,7 @@ $breakpoint-widescreen: 1200px;
     to {transform: translateX(45px)}
 }
 
-@keyframes disappear {
-    0% {
-        opacity: 1;
-        scaleX: 1;
-    }
-    50% {
-        opacity: 0;
-    }
-    100% {
-        scaleX: 0;
-        display: none;
-    }
-}
+
 
 @keyframes fadein {
     0% {
@@ -87,6 +75,37 @@ $breakpoint-widescreen: 1200px;
     }
 }
 
+@keyframes loadcircle__anim {
+    0% {
+      top: 72px;
+      left: 72px;
+      width: 0;
+      height: 0;
+      opacity: 0;
+    }
+    4.9% {
+      top: 72px;
+      left: 72px;
+      width: 0;
+      height: 0;
+      opacity: 0;
+    }
+    5% {
+      top: 72px;
+      left: 72px;
+      width: 0;
+      height: 0;
+      opacity: 1;
+    }
+    100% {
+      top: 0px;
+      left: 0px;
+      width: 144px;
+      height: 144px;
+      opacity: 0;
+    }
+  }
+  
 
 * {
     padding: 0;
@@ -101,7 +120,15 @@ a {
 
 h3 {
     margin: 20px 0px 30px 0px;
-    font-size: 22px;  
+    font-size: 24px;  
+
+    @media (min-width: $breakpoint-tablet) {
+    font-size: 28px;  
+    }
+
+    @media (min-width: $breakpoint-tablet) {
+        font-size: 32px;  
+        }
 }
 
 button {
@@ -122,6 +149,10 @@ button {
         transition: .3s;
         box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
     }
+
+    @media (min-width: $breakpoint-tablet) {
+        font-size: 20px;
+    } 
 }
 
 .footer {
@@ -134,10 +165,14 @@ button {
     font-size: 14px;
     
     .logo__footer {
-        padding: 20px 0px 0px 20px;
+        padding: 30px 0px 0px 20px;
         display: flex;
         width: 25%;
         justify-content: start;
+
+        @media (min-width: $breakpoint-tablet) {
+            width: 15%;
+        }
         
         .logo {
             object-fit: contain;

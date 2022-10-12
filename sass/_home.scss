@@ -3,45 +3,30 @@
     box-sizing: border-box;
 }
 
-.loader__container {
+.loader {   
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100vw;
     height: 100vh;
-    animation: disappear 2s ease-out 2s;
 
-    .loader {
-        height: 15px;
-        width: 105px;
-        display: flex;
+    .loadcircle {
         position: relative;
+        width: 160px;
+        height: 160px;
 
-        .dot {
-            width: 15px;
-            height: 15px;
-            border-radius: 50%;
-            background-color: $tertiary-color;
-            animation: move 700ms linear 0ms infinite;
-            margin-right: 30px;
-          
-            &:first-child {
-                position: absolute;
-                top:0;
-                left:0;
-                animation: grow 700ms linear 0ms infinite;
-            }
-          
-            &:last-child {
-                position: absolute;
-                top: 0;
-                right: 0;
-                margin-right: 0;
-                animation: grow 700ms linear 0s infinite reverse;
-            }
+        div {
+        position: absolute;
+        border: 6px solid $tertiary-color;
+        opacity: 1;
+        border-radius: 50%;
+        animation: loadcircle__anim 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+        }
+
+        div:nth-child(2) {
+        animation-delay: -0.5s;
         }
     }
-
 }
 
 
@@ -51,6 +36,10 @@
     
     .logo__top {
         margin: 10px 0px 10px 0px;
+
+        @media (min-width: $breakpoint-tablet) {
+            width: 30%;
+        }
     }
 }
 
@@ -60,6 +49,10 @@
     justify-content: center;
     padding: 15px 0px 15px 0px;
     border-top: solid 3px #c0c0c0;
+
+    @media (min-width: $breakpoint-tablet) {
+        font-size: 20px;
+    } 
     
     .search_bar[type=text] {
         border: none;
@@ -67,7 +60,11 @@
         margin: 0px 0px 0px 20px;
         &::placeholder {
             color: black;  
-            font-size: 16px;        /*/ pseudo element missing? /*/ 
+            font-size: 16px;    
+            
+            @media (min-width: $breakpoint-tablet) {
+                font-size: 20px;
+            } /*/ pseudo element missing? /*/ 
         }
     }
 }
@@ -82,14 +79,25 @@
     
     p {
         font-size: 18px;
-        padding: 0px 40px 0px 40px;
+        padding: 0px 40px 20px 40px;
         text-align: center;
         font-weight: 200;
+
+        @media (min-width: $breakpoint-tablet) {
+            font-size: 22px;
+        }
     }
 }
 
 .howitworks {
-    padding: 20px 30px 50px 30px; 
+    display: flex;
+    flex-direction: column;
+    padding: 20px 20% 50px 20%; 
+
+    @media (min-width: $breakpoint-tablet) {
+        justify-content: center;
+        align-content: center;
+    } 
     
     .how__item {
         display: flex;
@@ -114,16 +122,32 @@
             position: absolute;
             margin-left: -20px;
             padding: 2px 2px 2px 2px;
+            align-self: center;
+
+            @media (min-width: $breakpoint-tablet) {
+                font-size: 18px;
+                width: 30px;
+                height: 30px;
+                padding: 5px 2px 2px 2px;
+            } 
         }
         
         .how__icon {
-            margin: 0px 10px 0px 20px;
+            margin: 0px 10px 0px 5%;
             color: $darkgrey-copy;
             font-size: 16px;
+
+            @media (min-width: $breakpoint-tablet) {
+                font-size: 18px;
+            } 
         }
         
         .how__listcopy {
             margin: 0px 10px 0px 10px;
+
+            @media (min-width: $breakpoint-tablet) {
+                font-size: 18px;
+            } 
         }
         
         &:hover {
@@ -136,15 +160,28 @@
     }
 }
 
-.restaurants {
-    padding: 30px 20px 40px 20px;
+.restaurant__title {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 30px 0px 30px;
     background-color: $light-background;
     width: 100%;
+}
+
+.restaurants {
+    padding: 0px 30px 40px 30px;
+    background-color: $light-background;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: $breakpoint-tablet) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    } 
     
     .restaurant__card {
-        display: flex;
-        box-sizing: border-box;
-        flex-direction: column;
         background: white;
         border-radius: 20px;
         margin: 15px 0px 15px 0px;
@@ -153,12 +190,17 @@
         position: relative;
         @include card__shadow;
 
+        @media (min-width: $breakpoint-tablet) {
+            width: 47%;
+        } 
+
         .home__imgbox {
             height: 200px;
             width: 100%;
             overflow: hidden; 
             border-top-left-radius: 15px;
             border-top-right-radius: 15px;
+
         
             .restaurant__img {
                 width: 100%;
@@ -175,6 +217,10 @@
             background-color: $tertiary-color;
             color: darken($tertiary-color, 40%);
             border-radius: 2px;
+
+            @media (min-width: $breakpoint-tablet) {
+                padding: 5px 15px 5px 15px;
+            } 
         }
         
         .restaurantcard__text {

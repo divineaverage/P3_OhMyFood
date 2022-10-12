@@ -16,25 +16,42 @@
     transform: translateX(45px);
   }
 }
-@keyframes disappear {
-  0% {
-    opacity: 1;
-    scaleX: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    scaleX: 0;
-    display: none;
-  }
-}
 @keyframes fadein {
   0% {
     opacity: 0;
   }
   100% {
     opacity: 1;
+  }
+}
+@keyframes loadcircle__anim {
+  0% {
+    top: 72px;
+    left: 72px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  4.9% {
+    top: 72px;
+    left: 72px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  5% {
+    top: 72px;
+    left: 72px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+    width: 144px;
+    height: 144px;
+    opacity: 0;
   }
 }
 * {
@@ -50,7 +67,17 @@ a {
 
 h3 {
   margin: 20px 0px 30px 0px;
-  font-size: 22px;
+  font-size: 24px;
+}
+@media (min-width: 768px) {
+  h3 {
+    font-size: 28px;
+  }
+}
+@media (min-width: 768px) {
+  h3 {
+    font-size: 32px;
+  }
 }
 
 button {
@@ -67,6 +94,11 @@ button:hover {
   transition: 0.3s;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
 }
+@media (min-width: 768px) {
+  button {
+    font-size: 20px;
+  }
+}
 
 .footer {
   background: #282828;
@@ -78,10 +110,15 @@ button:hover {
   font-size: 14px;
 }
 .footer .logo__footer {
-  padding: 20px 0px 0px 20px;
+  padding: 30px 0px 0px 20px;
   display: flex;
   width: 25%;
   justify-content: start;
+}
+@media (min-width: 768px) {
+  .footer .logo__footer {
+    width: 15%;
+  }
 }
 .footer .logo__footer .logo {
   object-fit: contain;
@@ -109,40 +146,27 @@ li + li {
   box-sizing: border-box;
 }
 
-.loader__container {
+.loader {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100vw;
   height: 100vh;
-  animation: disappear 2s ease-out 2s;
 }
-.loader__container .loader {
-  height: 15px;
-  width: 105px;
-  display: flex;
+.loader .loadcircle {
   position: relative;
+  width: 160px;
+  height: 160px;
 }
-.loader__container .loader .dot {
-  width: 15px;
-  height: 15px;
+.loader .loadcircle div {
+  position: absolute;
+  border: 6px solid #99E2D0;
+  opacity: 1;
   border-radius: 50%;
-  background-color: #99E2D0;
-  animation: move 700ms linear 0ms infinite;
-  margin-right: 30px;
+  animation: loadcircle__anim 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
 }
-.loader__container .loader .dot:first-child {
-  position: absolute;
-  top: 0;
-  left: 0;
-  animation: grow 700ms linear 0ms infinite;
-}
-.loader__container .loader .dot:last-child {
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin-right: 0;
-  animation: grow 700ms linear 0s infinite reverse;
+.loader .loadcircle div:nth-child(2) {
+  animation-delay: -0.5s;
 }
 
 .home__logo {
@@ -152,6 +176,11 @@ li + li {
 .home__logo .logo__top {
   margin: 10px 0px 10px 0px;
 }
+@media (min-width: 768px) {
+  .home__logo .logo__top {
+    width: 30%;
+  }
+}
 
 .searchbox {
   display: flex;
@@ -160,6 +189,11 @@ li + li {
   padding: 15px 0px 15px 0px;
   border-top: solid 3px #c0c0c0;
 }
+@media (min-width: 768px) {
+  .searchbox {
+    font-size: 20px;
+  }
+}
 .searchbox .search_bar[type=text] {
   border: none;
   background-color: #e0e0e0;
@@ -167,7 +201,13 @@ li + li {
 }
 .searchbox .search_bar[type=text]::placeholder {
   color: black;
-  font-size: 16px; /*/ pseudo element missing? /*/
+  font-size: 16px;
+  /*/ pseudo element missing? /*/
+}
+@media (min-width: 768px) {
+  .searchbox .search_bar[type=text]::placeholder {
+    font-size: 20px;
+  }
 }
 
 .home__title {
@@ -180,13 +220,26 @@ li + li {
 }
 .home__title p {
   font-size: 18px;
-  padding: 0px 40px 0px 40px;
+  padding: 0px 40px 20px 40px;
   text-align: center;
   font-weight: 200;
 }
+@media (min-width: 768px) {
+  .home__title p {
+    font-size: 22px;
+  }
+}
 
 .howitworks {
-  padding: 20px 30px 50px 30px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 20% 50px 20%;
+}
+@media (min-width: 768px) {
+  .howitworks {
+    justify-content: center;
+    align-content: center;
+  }
 }
 .howitworks .how__item {
   display: flex;
@@ -211,14 +264,33 @@ li + li {
   position: absolute;
   margin-left: -20px;
   padding: 2px 2px 2px 2px;
+  align-self: center;
+}
+@media (min-width: 768px) {
+  .howitworks .how__item .circle {
+    font-size: 18px;
+    width: 30px;
+    height: 30px;
+    padding: 5px 2px 2px 2px;
+  }
 }
 .howitworks .how__item .how__icon {
-  margin: 0px 10px 0px 20px;
+  margin: 0px 10px 0px 5%;
   color: #696969;
   font-size: 16px;
 }
+@media (min-width: 768px) {
+  .howitworks .how__item .how__icon {
+    font-size: 18px;
+  }
+}
 .howitworks .how__item .how__listcopy {
   margin: 0px 10px 0px 10px;
+}
+@media (min-width: 768px) {
+  .howitworks .how__item .how__listcopy {
+    font-size: 18px;
+  }
 }
 .howitworks .how__item:hover {
   background-color: #ece1f9;
@@ -227,15 +299,29 @@ li + li {
   color: #9356DC;
 }
 
-.restaurants {
-  padding: 30px 20px 40px 20px;
+.restaurant__title {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 30px 0px 30px;
   background-color: #f5f5f5;
   width: 100%;
 }
-.restaurants .restaurant__card {
+
+.restaurants {
+  padding: 0px 30px 40px 30px;
+  background-color: #f5f5f5;
+  width: 100%;
   display: flex;
-  box-sizing: border-box;
   flex-direction: column;
+}
+@media (min-width: 768px) {
+  .restaurants {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+.restaurants .restaurant__card {
   background: white;
   border-radius: 20px;
   margin: 15px 0px 15px 0px;
@@ -243,6 +329,11 @@ li + li {
   font-size: 14px;
   position: relative;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+@media (min-width: 768px) {
+  .restaurants .restaurant__card {
+    width: 47%;
+  }
 }
 .restaurants .restaurant__card .home__imgbox {
   height: 200px;
@@ -264,6 +355,11 @@ li + li {
   background-color: #99E2D0;
   color: #278870;
   border-radius: 2px;
+}
+@media (min-width: 768px) {
+  .restaurants .restaurant__card .newtag {
+    padding: 5px 15px 5px 15px;
+  }
 }
 .restaurants .restaurant__card .restaurantcard__text {
   display: flex;

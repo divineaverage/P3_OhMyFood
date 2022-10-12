@@ -47,6 +47,10 @@
     display: flex;
     width: 100%;
     overflow: hidden;
+
+    @media (min-width: $breakpoint-tablet) {
+        position: relative;
+    }
     
     .restaurantpage__img {
         object-fit: cover;
@@ -59,7 +63,11 @@
         }
         @media (min-width: $breakpoint-desktop) {
             height: auto;
-            width: 135%;
+            width: 190%;
+        }
+
+        @media (min-width: $breakpoint-widescreen) {
+            width: 160%;
         }
     }
 }
@@ -83,14 +91,14 @@
         width: auto;
         height: auto;
         position: absolute;
-        top: 10%;
+        top: 12%;
         justify-self: center;
         border-bottom-left-radius: 20px;
         border-bottom-right-radius: 20px;
     }
 
     @media (min-width: $breakpoint-desktop) {
-        top: 20%;
+        top: 15%;
         left: 2%;
     }
     
@@ -134,7 +142,7 @@
         background-color: white;
         border-radius: 15px;
         opacity: 0;
-        animation: fadein 2s linear forwards;
+        animation: fadein 3s linear forwards;
         @include card__shadow;
 
         &:nth-of-type(2) {
@@ -171,6 +179,14 @@
 
         &:nth-of-type(9) {
             animation-delay: 1.8s;  /*/ why is this not opacity 1 to start? /*/
+        }
+
+        &:nth-of-type(10) {
+            animation-delay: 2s;  /*/ why is this not opacity 1 to start? /*/
+        }
+
+        &:nth-of-type(11) {
+            animation-delay: 2.2s;  /*/ why is this not opacity 1 to start? /*/
         }
         
         .dish-cont__col-1 {
@@ -239,8 +255,6 @@
                 background-color: $tertiary-color;
                 border-top-right-radius: 15px;
                 border-bottom-right-radius: 15px;
-                padding: 20px 20px 20px 20px;
-                
 
                 .dish__price {
                     display: none;
