@@ -26,22 +26,15 @@
 }
 @keyframes loadcircle__anim {
   0% {
-    top: 72px;
-    left: 72px;
-    width: 0;
-    height: 0;
-    opacity: 0;
-  }
-  4.9% {
-    top: 72px;
-    left: 72px;
+    top: 70px;
+    left: 65px;
     width: 0;
     height: 0;
     opacity: 0;
   }
   5% {
-    top: 72px;
-    left: 72px;
+    top: 70px;
+    left: 65px;
     width: 0;
     height: 0;
     opacity: 1;
@@ -54,30 +47,62 @@
     opacity: 0;
   }
 }
+@keyframes body__load {
+  0% {
+    opacity: 0;
+  }
+  85% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes loader__out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 * {
   padding: 0;
   box-sizing: border-box;
 }
 
 a {
-  all: unset;
-  display: flex;
-  flex-direction: column;
+  font-color: black;
+  text-decoration: none;
 }
 
 h3 {
-  margin: 20px 0px 30px 0px;
   font-size: 24px;
 }
 @media (min-width: 768px) {
   h3 {
-    font-size: 28px;
+    font-size: 26px;
   }
 }
 @media (min-width: 768px) {
   h3 {
-    font-size: 32px;
+    font-size: 30px;
   }
+}
+
+ul {
+  list-style-type: none;
+}
+ul a {
+  color: white;
+}
+
+li {
+  padding: 5px 10px 5px 20px;
+}
+
+li + li {
+  margin: 10px 0px 0px 0px;
 }
 
 button {
@@ -129,18 +154,6 @@ button:hover {
   padding: 5px 10px 5px 0px;
 }
 
-ul {
-  list-style-type: none;
-}
-
-li {
-  padding: 5px 10px 5px 20px;
-}
-
-li + li {
-  margin: 10px 0px 0px 0px;
-}
-
 * {
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   box-sizing: border-box;
@@ -148,10 +161,13 @@ li + li {
 
 .loader {
   display: flex;
+  position: absolute;
   justify-content: center;
   align-items: center;
   width: 100vw;
   height: 100vh;
+  animation: loader__out ease-out 2.95s;
+  animation-fill-mode: forwards;
 }
 .loader .loadcircle {
   position: relative;
@@ -160,29 +176,32 @@ li + li {
 }
 .loader .loadcircle div {
   position: absolute;
-  border: 6px solid #99E2D0;
+  border: 4px solid #99E2D0;
   opacity: 1;
   border-radius: 50%;
-  animation: loadcircle__anim 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+  animation: loadcircle__anim 1.5s ease-in-out infinite;
 }
 .loader .loadcircle div:nth-child(2) {
   animation-delay: -0.5s;
 }
 
-.home__logo {
+.page__body {
+  position: relative;
+  animation: body__load ease-in 3s;
+}
+.page__body .home__logo {
   display: flex;
   justify-content: center;
 }
-.home__logo .logo__top {
+.page__body .home__logo .logo__top {
   margin: 10px 0px 10px 0px;
 }
 @media (min-width: 768px) {
-  .home__logo .logo__top {
+  .page__body .home__logo .logo__top {
     width: 30%;
   }
 }
-
-.searchbox {
+.page__body .searchbox {
   display: flex;
   background-color: #e0e0e0;
   justify-content: center;
@@ -190,27 +209,37 @@ li + li {
   border-top: solid 3px #c0c0c0;
 }
 @media (min-width: 768px) {
-  .searchbox {
+  .page__body .searchbox {
     font-size: 20px;
   }
 }
-.searchbox .search_bar[type=text] {
+.page__body .searchbox .search_bar[type=text] {
   border: none;
   background-color: #e0e0e0;
   margin: 0px 0px 0px 20px;
 }
-.searchbox .search_bar[type=text]::placeholder {
+.page__body .searchbox .search_bar[type=text]::placeholder {
   color: black;
   font-size: 16px;
-  /*/ pseudo element missing? /*/
 }
 @media (min-width: 768px) {
-  .searchbox .search_bar[type=text]::placeholder {
+  .page__body .searchbox .search_bar[type=text]::placeholder {
     font-size: 20px;
   }
 }
-
-.home__title {
+.page__body .homehow__wrapper {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .page__body .homehow__wrapper {
+    flex-direction: row;
+  }
+  .page__body .homehow__wrapper h3 {
+    text-align: center;
+  }
+}
+.page__body .homehow__wrapper .home__title {
   background-color: #f5f5f5;
   display: flex;
   flex-direction: column;
@@ -218,30 +247,43 @@ li + li {
   align-items: center;
   padding: 30px 0px 50px 0px;
 }
-.home__title p {
+@media (min-width: 768px) {
+  .page__body .homehow__wrapper .home__title {
+    width: 49%;
+    padding: 0 2% 5% 2%;
+    margin: 30px;
+    border-radius: 15px;
+  }
+}
+.page__body .homehow__wrapper .home__title p {
   font-size: 18px;
   padding: 0px 40px 20px 40px;
   text-align: center;
   font-weight: 200;
 }
 @media (min-width: 768px) {
-  .home__title p {
+  .page__body .homehow__wrapper .home__title p {
     font-size: 22px;
   }
 }
-
-.howitworks {
+.page__body .homehow__wrapper .howitworks {
   display: flex;
   flex-direction: column;
-  padding: 20px 20% 50px 20%;
+  padding: 20px 10% 10% 10%;
+  margin: 30px 0 30px 0;
 }
 @media (min-width: 768px) {
-  .howitworks {
+  .page__body .homehow__wrapper .howitworks {
     justify-content: center;
     align-content: center;
+    width: 49%;
+    padding: 0 2% 5% 2%;
+    margin: 30px;
+    border-radius: 15px;
+    background-color: #ece1f9;
   }
 }
-.howitworks .how__item {
+.page__body .homehow__wrapper .howitworks .how__item {
   display: flex;
   flex-direction: row;
   background-color: #f5f5f5;
@@ -250,7 +292,7 @@ li + li {
   padding: 25px 10px 20px 10px;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
 }
-.howitworks .how__item .circle {
+.page__body .homehow__wrapper .howitworks .how__item .circle {
   box-sizing: border-box;
   color: white;
   text-align: center;
@@ -267,47 +309,48 @@ li + li {
   align-self: center;
 }
 @media (min-width: 768px) {
-  .howitworks .how__item .circle {
+  .page__body .homehow__wrapper .howitworks .how__item .circle {
     font-size: 18px;
     width: 30px;
     height: 30px;
     padding: 5px 2px 2px 2px;
   }
 }
-.howitworks .how__item .how__icon {
+.page__body .homehow__wrapper .howitworks .how__item .how__icon {
   margin: 0px 10px 0px 5%;
   color: #696969;
   font-size: 16px;
 }
 @media (min-width: 768px) {
-  .howitworks .how__item .how__icon {
+  .page__body .homehow__wrapper .howitworks .how__item .how__icon {
     font-size: 18px;
+    margin: 0px 5px 0px 8%;
   }
 }
-.howitworks .how__item .how__listcopy {
+.page__body .homehow__wrapper .howitworks .how__item .how__listcopy {
   margin: 0px 10px 0px 10px;
 }
 @media (min-width: 768px) {
-  .howitworks .how__item .how__listcopy {
+  .page__body .homehow__wrapper .howitworks .how__item .how__listcopy {
     font-size: 18px;
   }
 }
-.howitworks .how__item:hover {
-  background-color: #ece1f9;
+.page__body .homehow__wrapper .howitworks .how__item:hover {
+  background-color: white;
 }
-.howitworks .how__item:hover .how__icon {
+.page__body .homehow__wrapper .howitworks .how__item:hover .how__icon {
   color: #9356DC;
 }
-
-.restaurant__title {
-  display: flex;
-  flex-direction: column;
-  padding: 30px 30px 0px 30px;
+.page__body .restaurant__title {
+  padding: 60px 30px 0px 30px;
   background-color: #f5f5f5;
   width: 100%;
 }
-
-.restaurants {
+.page__body .restaurant__title > h3 {
+  display: inline;
+  background-color: white;
+}
+.page__body .restaurants {
   padding: 0px 30px 40px 30px;
   background-color: #f5f5f5;
   width: 100%;
@@ -315,13 +358,14 @@ li + li {
   flex-direction: column;
 }
 @media (min-width: 768px) {
-  .restaurants {
+  .page__body .restaurants {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+    background: white;
   }
 }
-.restaurants .restaurant__card {
+.page__body .restaurants .restaurant__card {
   background: white;
   border-radius: 20px;
   margin: 15px 0px 15px 0px;
@@ -331,11 +375,11 @@ li + li {
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
 }
 @media (min-width: 768px) {
-  .restaurants .restaurant__card {
+  .page__body .restaurants .restaurant__card {
     width: 47%;
   }
 }
-.restaurants .restaurant__card .home__imgbox {
+.page__body .restaurants .restaurant__card .home__imgbox {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -345,12 +389,12 @@ li + li {
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
-.restaurants .restaurant__card .home__imgbox .restaurant__img {
+.page__body .restaurants .restaurant__card .home__imgbox .restaurant__img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.restaurants .restaurant__card .newtag {
+.page__body .restaurants .restaurant__card .newtag {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -360,60 +404,61 @@ li + li {
   border-radius: 2px;
 }
 @media (min-width: 768px) {
-  .restaurants .restaurant__card .newtag {
+  .page__body .restaurants .restaurant__card .newtag {
     padding: 5px 15px 5px 15px;
   }
 }
-.restaurants .restaurant__card .restaurantcard__text {
+.page__body .restaurants .restaurant__card .restaurantcard__text {
   display: flex;
   flex-direction: column;
-  margin: 10px 10px 10px 20px;
+  margin: 10px;
   position: relative;
 }
-.restaurants .restaurant__card .restaurantcard__text .hearts {
+.page__body .restaurants .restaurant__card .restaurantcard__text .hearts {
   display: flex;
   cursor: pointer;
   font-size: 22px;
 }
 @media (min-width: 768px) {
-  .restaurants .restaurant__card .restaurantcard__text .hearts {
+  .page__body .restaurants .restaurant__card .restaurantcard__text .hearts {
     font-size: 30px;
   }
 }
-.restaurants .restaurant__card .restaurantcard__text .hearts .nonfavorite {
+.page__body .restaurants .restaurant__card .restaurantcard__text .hearts .nonfavorite {
   width: 100%;
   font-weight: 200;
+  margin-left: 40%;
 }
-.restaurants .restaurant__card .restaurantcard__text .hearts .favorite {
+.page__body .restaurants .restaurant__card .restaurantcard__text .hearts .favorite {
   width: 100%;
-  margin-left: -100%;
+  margin-left: -60%;
   opacity: 0;
 }
-.restaurants .restaurant__card .restaurantcard__text .hearts .favorite:hover {
+.page__body .restaurants .restaurant__card .restaurantcard__text .hearts .favorite:hover {
   opacity: 1;
   transition: 0.4s;
 }
-.restaurants .restaurant__card .restaurantcard__text .hearts .favorite:hover .fa-heart {
+.page__body .restaurants .restaurant__card .restaurantcard__text .hearts .favorite:hover .fa-heart {
   background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #FF79DA), color-stop(1, #9356DC));
   background-image: gradient(linear, left top, right bottom, color-stop(0, #FF79DA), color-stop(1, #9356DC));
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
 }
-.restaurants .restaurant__card .restaurantcard__text .restaurant__name {
+.page__body .restaurants .restaurant__card .restaurantcard__text .restaurant__name {
   font-weight: 500;
   font-size: 16px;
-  margin: 5px 0px 5px 0px;
 }
-.restaurants .restaurant__card .restaurantcard__text .restaurant__city {
+.page__body .restaurants .restaurant__card .restaurantcard__text .restaurant__city {
   font-weight: 300;
   font-size: 16px;
-  margin: 0px 0px 5px 0px;
 }
-.restaurants .restaurant__card .restaurantcard__text .hearts {
+.page__body .restaurants .restaurant__card .restaurantcard__text a {
+  padding: 5px 0px 5px 5px;
+}
+.page__body .restaurants .restaurant__card .restaurantcard__text .hearts {
   position: absolute;
-  top: 10px;
-  right: 0px;
+  right: 0;
 }
 
 /*# sourceMappingURL=index.css.map */

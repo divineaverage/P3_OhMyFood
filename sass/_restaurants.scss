@@ -81,7 +81,6 @@
     margin: -45px 0px 0px 0px;
     padding: 0px 10px 45px 10px;
     z-index: 5;
-    height: 110vh;
     width: 100%;
     justify-content: center;
 
@@ -149,45 +148,43 @@
             animation-delay: .2s;
         }
 
-        &:nth-of-type(2) {
+        &:nth-of-type(3) {
             animation-delay: .4s;
         }
 
-        &:nth-of-type(3) {
+        &:nth-of-type(4) {
             animation-delay: .6s;
         }
 
-        &:nth-of-type(4) {
+        &:nth-of-type(5) {
             animation-delay: .8s;
         }
 
-        &:nth-of-type(5) {
+        &:nth-of-type(6) {
             animation-delay: 1s;
         }
 
-        &:nth-of-type(6) {
+        &:nth-of-type(7) {
             animation-delay: 1.2s;
         }
 
-        &:nth-of-type(7) {
+        &:nth-of-type(8) {
             animation-delay: 1.4s;
         }
 
-        &:nth-of-type(8) {
+        &:nth-of-type(9) {
             animation-delay: 1.6s;
         }
 
-        &:nth-of-type(9) {
-            animation-delay: 1.8s;  /*/ why is this not opacity 1 to start? /*/
-        }
-
         &:nth-of-type(10) {
-            animation-delay: 2s;  /*/ why is this not opacity 1 to start? /*/
+            animation-delay: 1.8s;
         }
 
         &:nth-of-type(11) {
-            animation-delay: 2.2s;  /*/ why is this not opacity 1 to start? /*/
+            animation-delay: 2s;  
         }
+
+       
         
         .dish-cont__col-1 {
             padding: 0px 0px 10px 10px;
@@ -235,7 +232,6 @@
                 padding: 0px 10px 10px 30px;
             }
             
-            
             .dish__price {
                 font-size: 12px;
                 align-self: flex-end;
@@ -245,9 +241,13 @@
                 }
             }
             
+            .checkbox__container {
+
+            }
+
             .dish__checkbox {
                 visibility: hidden;
-                transform: scaleX(0);
+                width: 0%;
                 transition: transform .4s;
             }
 
