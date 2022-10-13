@@ -75,6 +75,9 @@ a {
   font-color: black;
   text-decoration: none;
 }
+a:visited {
+  color: black;
+}
 
 h3 {
   font-size: 24px;
@@ -108,7 +111,7 @@ li + li {
 button {
   border-radius: 50px;
   padding: 12px 25px 12px 25px;
-  background-image: linear-gradient(to bottom right, #FF79DA, #9356DC);
+  background-image: linear-gradient(to bottom right, #ff79da, #9356dc);
   color: white;
   border: none;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
@@ -126,24 +129,41 @@ button:hover {
 }
 
 .footer {
-  background: #282828;
   display: flex;
   flex-direction: column;
+  background: #282828;
   color: white;
   margin: 0px;
-  padding: 0px 0px 20px 0px;
+  padding: 10px 0px 20px 0px;
   font-size: 14px;
 }
-.footer .logo__footer {
-  padding: 30px 0px 0px 20px;
-  display: flex;
-  width: 25%;
-  justify-content: start;
+@media (min-width: 768px) {
+  .footer {
+    flex-direction: row;
+  }
 }
 @media (min-width: 768px) {
-  .footer .logo__footer {
-    width: 15%;
+  .footer ul {
+    column-count: 2;
+    column-gap: 20px;
+    column-width: 40px;
+    font-size: 16px;
   }
+}
+@media (min-width: 768px) {
+  .footer ul li:nth-child(2n):after {
+    content: " ";
+    display: block;
+  }
+}
+@media (min-width: 768px) {
+  .footer .footer__listbox {
+    margin: 0 10% 0 10%;
+  }
+}
+.footer .logo__footer {
+  width: 25%;
+  padding: 15px;
 }
 .footer .logo__footer .logo {
   object-fit: contain;
@@ -311,8 +331,8 @@ button:hover {
   transition: 0.4s;
 }
 .menu__container .menu__head .hearts .favorite:hover .fa-heart {
-  background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #FF79DA), color-stop(1, #9356DC));
-  background-image: gradient(linear, left top, right bottom, color-stop(0, #FF79DA), color-stop(1, #9356DC));
+  background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #ff79da), color-stop(1, #9356dc));
+  background-image: gradient(linear, left top, right bottom, color-stop(0, #ff79da), color-stop(1, #9356dc));
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
@@ -322,7 +342,7 @@ button:hover {
   font-size: 14px;
   font-weight: 300;
   padding: 20px 0px 5px 0px;
-  background: linear-gradient(#99E2D0 0 0) bottom left/10% 2px no-repeat;
+  background: linear-gradient(#99e2d0 0 0) bottom left/10% 2px no-repeat;
 }
 @media (min-width: 768px) {
   .menu__container .menu__subhead {
@@ -412,6 +432,7 @@ button:hover {
 .menu__container .dish__container .dish-cont__col-2 {
   padding: 0px 0px 0px 0px;
   display: flex;
+  max-width: 60px;
 }
 .menu__container .dish__container .dish-cont__col-2 .dish__price {
   font-size: 12px;
@@ -425,27 +446,28 @@ button:hover {
 }
 .menu__container .dish__container .dish-cont__col-2 .checkbox__container {
   display: flex;
-  justify-content: center;
   align-items: center;
+  margin: 0 0 0 40%;
   width: 0%;
 }
 .menu__container .dish__container .dish-cont__col-2 .checkbox__container .dish__checkbox {
   opacity: 0;
 }
 .menu__container .dish__container .dish-cont__col-2:hover {
-  background-color: #99E2D0;
+  background-color: #99e2d0;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   padding: 0 10px 0 0;
-  width: 60px;
-  transition: 0.7s;
+  width: 40%;
+  transition: width 0.7s;
+  cursor: pointer;
 }
 .menu__container .dish__container .dish-cont__col-2:hover .dish__price {
-  opacity: 0;
+  display: none;
 }
 .menu__container .dish__container .dish-cont__col-2:hover .checkbox__container {
-  background-color: #99E2D0;
-  color: #99E2D0;
+  background-color: #99e2d0;
+  color: #99e2d0;
 }
 .menu__container .dish__container .dish-cont__col-2:hover .checkbox__container .dish__checkbox {
   opacity: 1;

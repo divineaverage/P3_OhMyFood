@@ -1,6 +1,6 @@
-$primary-color: #9356DC;
-$secondary-color: #FF79DA;
-$tertiary-color: #99E2D0;
+$primary-color: #9356dc;
+$secondary-color: #ff79da;
+$tertiary-color: #99e2d0;
 $light-background: #f5f5f5;
 $medium-background: #e0e0e0;
 $dark-background: #282828;
@@ -10,206 +10,254 @@ $breakpoint-tablet: 768px;
 $breakpoint-desktop: 992px;
 $breakpoint-widescreen: 1080px;
 
-
 @mixin card__shadow {
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
 }
 
 @mixin heart__gradient {
-    background-image:-webkit-gradient( linear, left top, right bottom, color-stop(0, $secondary-color), color-stop(1, $primary-color));
-    background-image:gradient( linear, left top, right bottom, color-stop(0, $secondary-color), color-stop(1, $primary-color));
-    color:transparent;
-    -webkit-background-clip:text;
-    background-clip:text;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right bottom,
+    color-stop(0, $secondary-color),
+    color-stop(1, $primary-color)
+  );
+  background-image: gradient(
+    linear,
+    left top,
+    right bottom,
+    color-stop(0, $secondary-color),
+    color-stop(1, $primary-color)
+  );
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
 }
 
 @mixin favorite__heart {
-    .hearts {
-        display: flex;
-        cursor: pointer;
-        font-size: 22px;
-        
-        @media (min-width: $breakpoint-tablet) {
-            font-size: 30px;
-        }
-        
-        .nonfavorite {
-            width: 100%;
-            font-weight: 200;
-            margin-left: 40%;
-        }
-        
-        .favorite {
-            width: 100%;
-            margin-left: -60%;
-            opacity: 0;
-            
-            &:hover {
-                opacity: 1.0;
-                transition: .4s;
-                .fa-heart {
-                    @include heart__gradient
-                }
-            }
-        }
+  .hearts {
+    display: flex;
+    cursor: pointer;
+    font-size: 22px;
+
+    @media (min-width: $breakpoint-tablet) {
+      font-size: 30px;
     }
+
+    .nonfavorite {
+      width: 100%;
+      font-weight: 200;
+      margin-left: 40%;
+    }
+
+    .favorite {
+      width: 100%;
+      margin-left: -60%;
+      opacity: 0;
+
+      &:hover {
+        opacity: 1;
+        transition: 0.4s;
+        .fa-heart {
+          @include heart__gradient;
+        }
+      }
+    }
+  }
 }
 
 @keyframes grow {
-    from {transform: scale(0,0); opacity: 0;}
-    to {transform: scale(1,1); opacity: 1;}
+  from {
+    transform: scale(0, 0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
 }
-  
+
 @keyframes move {
-    from {transform: translateX(0px)}
-    to {transform: translateX(45px)}
+  from {
+    transform: translateX(0px);
+  }
+  to {
+    transform: translateX(45px);
+  }
 }
-
-
 
 @keyframes fadein {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes loadcircle__anim {
-    0% {
-      top: 70px;
-      left: 65px;
-      width: 0;
-      height: 0;
-      opacity: 0;
-    }
-    5% {
-      top: 70px;
-      left: 65px;
-      width: 0;
-      height: 0;
-      opacity: 1;
-    }
-    100% {
-      top: 0px;
-      left: 0px;
-      width: 144px;
-      height: 144px;
-      opacity: 0;
-    }
+  0% {
+    top: 70px;
+    left: 65px;
+    width: 0;
+    height: 0;
+    opacity: 0;
   }
+  5% {
+    top: 70px;
+    left: 65px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+    width: 144px;
+    height: 144px;
+    opacity: 0;
+  }
+}
 
-  @keyframes body__load {
-    0% {
-        opacity: 0;
-    }
-    85% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+@keyframes body__load {
+  0% {
+    opacity: 0;
   }
+  85% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
-  @keyframes loader__out {
-    0% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
+@keyframes loader__out {
+  0% {
+    opacity: 1;
   }
-  
+  100% {
+    opacity: 0;
+  }
+}
 
 * {
-    padding: 0;
-    box-sizing: border-box;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 a {
-    font-color: black;
-    text-decoration: none;
+  font-color: black;
+  text-decoration: none;
+
+  &:visited {
+    color: black;
+  }
 }
 
 h3 {
-    font-size: 24px;  
+  font-size: 24px;
 
-    @media (min-width: $breakpoint-tablet) {
-    font-size: 26px;  
-    }
+  @media (min-width: $breakpoint-tablet) {
+    font-size: 26px;
+  }
 
-    @media (min-width: $breakpoint-tablet) {
-        font-size: 30px;  
-        }
+  @media (min-width: $breakpoint-tablet) {
+    font-size: 30px;
+  }
 }
 
 ul {
-    list-style-type: none;
-    a {
-        color: white;
-    }
+  list-style-type: none;
+
+  a {
+    color: white;
+  }
 }
 
 li {
-    padding: 5px 10px 5px 20px;
+  padding: 5px 10px 5px 20px;
 }
 
 li + li {
-    margin: 10px 0px 0px 0px;
+  margin: 10px 0px 0px 0px;
 }
 
 button {
-    border-radius: 50px;
-    padding: 12px 25px 12px 25px;
-    background-image: linear-gradient(to bottom right, $secondary-color, $primary-color);
-    color: white;
-    border: none;
-    @include card__shadow;
-    
-    &:hover {
-        cursor: pointer;
-        background-image: linear-gradient(
-            to bottom right, 
-            lighten($secondary-color, 10%),
-            lighten($primary-color, 10%),
-        );
-        transition: .3s;
-        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
-    }
+  border-radius: 50px;
+  padding: 12px 25px 12px 25px;
+  background-image: linear-gradient(
+    to bottom right,
+    $secondary-color,
+    $primary-color
+  );
+  color: white;
+  border: none;
+  @include card__shadow;
 
-    @media (min-width: $breakpoint-tablet) {
-        font-size: 20px;
-    } 
+  &:hover {
+    cursor: pointer;
+    background-image: linear-gradient(
+      to bottom right,
+      lighten($secondary-color, 10%),
+      lighten($primary-color, 10%)
+    );
+    transition: 0.3s;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    font-size: 20px;
+  }
 }
 
 .footer {
-    background: $dark-background;
-    display: flex;
-    flex-direction: column;
-    color: white;
-    margin: 0px;
-    padding: 0px 0px 20px 0px;
-    font-size: 14px;
-    
-    .logo__footer {
-        padding: 30px 0px 0px 20px;
-        display: flex;
-        width: 25%;
-        justify-content: start;
+  display: flex;
+  flex-direction: column;
+  background: $dark-background;
+  color: white;
+  margin: 0px;
+  padding: 10px 0px 20px 0px;
+  font-size: 14px;
 
-        @media (min-width: $breakpoint-tablet) {
-            width: 15%;
-        }
-        
-        .logo {
-            object-fit: contain;
-            width: 25%;
-            height: auto;
-        }
+  @media (min-width: $breakpoint-tablet) {
+    flex-direction: row;
+  }
+
+  ul {
+    @media (min-width: $breakpoint-tablet) {
+      column-count: 2;
+      column-gap: 20px;
+      column-width: 40px;
+      font-size: 16px;
     }
-    .fa-solid::before {              
-        padding: 5px 10px 5px 0px;
+
+    li {
+      @media (min-width: $breakpoint-tablet) {
+        &:nth-child(2n):after {
+          content: " ";
+          display: block;
+        }
+      }
     }
+  }
+
+  .footer__listbox {
+    @media (min-width: $breakpoint-tablet) {
+      margin: 0 10% 0 10%;
+    }
+  }
+
+  .logo__footer {
+    width: 25%;
+    padding: 15px;
+
+    .logo {
+      object-fit: contain;
+      width: 25%;
+      height: auto;
+    }
+  }
+  .fa-solid::before {
+    padding: 5px 10px 5px 0px;
+  }
 }
-

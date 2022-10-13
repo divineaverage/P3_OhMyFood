@@ -75,6 +75,9 @@ a {
   font-color: black;
   text-decoration: none;
 }
+a:visited {
+  color: black;
+}
 
 h3 {
   font-size: 24px;
@@ -108,7 +111,7 @@ li + li {
 button {
   border-radius: 50px;
   padding: 12px 25px 12px 25px;
-  background-image: linear-gradient(to bottom right, #FF79DA, #9356DC);
+  background-image: linear-gradient(to bottom right, #ff79da, #9356dc);
   color: white;
   border: none;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
@@ -126,24 +129,41 @@ button:hover {
 }
 
 .footer {
-  background: #282828;
   display: flex;
   flex-direction: column;
+  background: #282828;
   color: white;
   margin: 0px;
-  padding: 0px 0px 20px 0px;
+  padding: 10px 0px 20px 0px;
   font-size: 14px;
 }
-.footer .logo__footer {
-  padding: 30px 0px 0px 20px;
-  display: flex;
-  width: 25%;
-  justify-content: start;
+@media (min-width: 768px) {
+  .footer {
+    flex-direction: row;
+  }
 }
 @media (min-width: 768px) {
-  .footer .logo__footer {
-    width: 15%;
+  .footer ul {
+    column-count: 2;
+    column-gap: 20px;
+    column-width: 40px;
+    font-size: 16px;
   }
+}
+@media (min-width: 768px) {
+  .footer ul li:nth-child(2n):after {
+    content: " ";
+    display: block;
+  }
+}
+@media (min-width: 768px) {
+  .footer .footer__listbox {
+    margin: 0 10% 0 10%;
+  }
+}
+.footer .logo__footer {
+  width: 25%;
+  padding: 15px;
 }
 .footer .logo__footer .logo {
   object-fit: contain;
@@ -176,7 +196,7 @@ button:hover {
 }
 .loader .loadcircle div {
   position: absolute;
-  border: 4px solid #99E2D0;
+  border: 4px solid #99e2d0;
   opacity: 1;
   border-radius: 50%;
   animation: loadcircle__anim 1.5s ease-in-out infinite;
@@ -298,7 +318,7 @@ button:hover {
   text-align: center;
   text-decoration: none;
   font-size: 14px;
-  background-color: #9356DC;
+  background-color: #9356dc;
   width: 20px;
   height: 20px;
   border: none;
@@ -339,7 +359,7 @@ button:hover {
   background-color: white;
 }
 .page__body .homehow__wrapper .howitworks .how__item:hover .how__icon {
-  color: #9356DC;
+  color: #9356dc;
 }
 .page__body .restaurant__title {
   padding: 60px 30px 0px 30px;
@@ -399,7 +419,7 @@ button:hover {
   top: 10px;
   right: 10px;
   padding: 5px 25px 5px 25px;
-  background-color: #99E2D0;
+  background-color: #99e2d0;
   color: #278870;
   border-radius: 2px;
 }
@@ -439,8 +459,8 @@ button:hover {
   transition: 0.4s;
 }
 .page__body .restaurants .restaurant__card .restaurantcard__text .hearts .favorite:hover .fa-heart {
-  background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #FF79DA), color-stop(1, #9356DC));
-  background-image: gradient(linear, left top, right bottom, color-stop(0, #FF79DA), color-stop(1, #9356DC));
+  background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #ff79da), color-stop(1, #9356dc));
+  background-image: gradient(linear, left top, right bottom, color-stop(0, #ff79da), color-stop(1, #9356dc));
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;

@@ -80,12 +80,12 @@
     flex-direction: column;
 
     @media (min-width: $breakpoint-tablet) {
-        flex-direction: row;
+      flex-direction: row;
 
-        h3 {
-            text-align: center;
-        }
-      } 
+      h3 {
+        text-align: center;
+      }
+    }
 
     .home__title {
       background-color: $light-background;
@@ -100,7 +100,7 @@
         padding: 0 2% 5% 2%;
         margin: 30px;
         border-radius: 15px;
-      } 
+      }
 
       p {
         font-size: 18px;
@@ -129,7 +129,6 @@
         border-radius: 15px;
         background-color: lighten($primary-color, 33%);
       }
-
 
       .how__item {
         display: flex;
@@ -171,7 +170,7 @@
 
           @media (min-width: $breakpoint-tablet) {
             font-size: 18px;
-            margin: 0px 5px 0px 8%
+            margin: 0px 5px 0px 8%;
           }
         }
 
@@ -200,8 +199,8 @@
     width: 100%;
 
     > h3 {
-        display: inline;
-        background-color: white;
+      display: inline;
+      background-color: white;
     }
   }
 
@@ -213,11 +212,11 @@
     flex-direction: column;
 
     @media (min-width: $breakpoint-tablet) {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        background: white;
-      }
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      background: white;
+    }
 
     .restaurant__card {
       background: white;
@@ -269,24 +268,24 @@
         margin: 10px;
         position: relative;
         @include favorite__heart;
-    
+
         .restaurant__name {
-            font-weight: 500;
-            font-size: 16px;
+          font-weight: 500;
+          font-size: 16px;
         }
-    
+
         .restaurant__city {
-            font-weight: 300;
-            font-size: 16px;
+          font-weight: 300;
+          font-size: 16px;
         }
 
         a {
-            padding: 5px 0px 5px 5px;
+          padding: 5px 0px 5px 5px;
         }
 
         .hearts {
-            position: absolute;
-            right: 0;
+          position: absolute;
+          right: 0;
         }
       }
     }
