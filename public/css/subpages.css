@@ -72,8 +72,10 @@
 }
 
 a {
-  font-color: black;
   text-decoration: none;
+}
+a:link {
+  font-color: black;
 }
 a:visited {
   color: black;

@@ -146,8 +146,11 @@ $breakpoint-widescreen: 1080px;
 }
 
 a {
-  font-color: black;
   text-decoration: none;
+  
+    &:link {  
+      font-color: black;
+    }
 
   &:visited {
     color: black;
