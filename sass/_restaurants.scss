@@ -187,8 +187,11 @@
        
         
         .dish-cont__col-1 {
+            display: flex;
             padding: 0px 0px 10px 10px;
             flex-direction: column;
+            flex: 1;
+            min-width: 0;
 
             @media (min-width: $breakpoint-desktop) {
                 padding: 0px 0px 10px 30px
@@ -207,9 +210,9 @@
             .dish__descript {
                 font-size: 12px;
                 padding: 0px 10px 0px 0px;
-                text-overflow: ellipsis;
+                white-space: nowrap;
                 overflow: hidden;
-                white-space: nowrap;   /*/ how to make this break with ellipses? /*/
+                text-overflow: ellipsis;
 
                 @media (min-width: $breakpoint-tablet) {
                     font-size: 16px;
@@ -224,17 +227,13 @@
         }
         
         .dish-cont__col-2 {
-            padding: 0px 10px 10px 0px;
+            padding: 0px 0px 0px 0px;
             display: flex;
-            transform: all 5s;
-
-            @media (min-width: $breakpoint-desktop) {
-                padding: 0px 10px 10px 30px;
-            }
             
             .dish__price {
                 font-size: 12px;
                 align-self: flex-end;
+                padding: 0 10px 10px 0;
 
                 @media (min-width: $breakpoint-tablet) {
                     font-size: 14px;
@@ -242,52 +241,60 @@
             }
             
             .checkbox__container {
-
-            }
-
-            .dish__checkbox {
-                visibility: hidden;
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 width: 0%;
-                transition: transform .4s;
+
+                .dish__checkbox {
+                    opacity: 0;
+                }
             }
 
             &:hover {
                 background-color: $tertiary-color;
                 border-top-right-radius: 15px;
                 border-bottom-right-radius: 15px;
+                padding: 0 10px 0 0;
+                width: 60px;
+                transition: .7s;
 
                 .dish__price {
-                    display: none;
+                    opacity: 0;
                 }
-                
-                .dish__checkbox {
-                    visibility: visible;
-                    display: flex;
-                    font-size: 14px;
-                    font-weight: 400;
+
+                .checkbox__container {
                     background-color: $tertiary-color;
                     color: $tertiary-color;
-                    width: 20px;
-                    height: 20px;
-                    border-color: white;
-                    border-style: solid;
-                    border-width: 10px;
-                    border-radius: 26px;  
-                    justify-content: center;
-                    transform: scaleX(1) rotate(360deg);
-                    transition: transform .2s ease-in .2s;
+                   
+                    .dish__checkbox {
+                        opacity: 1;
+                        border-color: white;
+                        border-style: solid;
+                        border-width: 10px;
+                        height: 20px;
+                        width: 20px;
+                        border-radius: 50%;
+                        font-size: 14px;
+                        font-weight: 400;
+                        justify-content: center;
+                        align-items: center;
+                        display: flex;
 
-                    .fa-check {
-                        align-self: center;                    
+                        .fa-check { 
+                            transform: rotate(360deg);
+                            transition: transform .3s ease-in .4s;                 
+                        }
                     }
                 }
             }
         }
     }
-    
+ 
     .dish__container + .dish__container {
         margin: 15px 0px 0px 0px;
     }
+
 
     .button__box {
         text-align: center;
