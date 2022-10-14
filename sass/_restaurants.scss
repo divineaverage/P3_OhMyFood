@@ -112,8 +112,11 @@
     }
 
     .menu__name {
-      font-family: "Shrikhand", Times, serif;
-      font-size: 24px;
+      
+      h1 {
+        font-family: "Shrikhand", Times, serif;
+        font-size: 24px;
+      }
 
       @media (min-width: $breakpoint-tablet) {
         font-size: 30px;
@@ -227,7 +230,8 @@
     .dish-cont__col-2 {
       padding: 0px 0px 0px 0px;
       display: flex;
-      max-width: 60px;
+      width: 10%;
+      transition: 0.7s;
 
       .dish__price {
         font-size: 12px;
@@ -255,8 +259,6 @@
         border-top-right-radius: 15px;
         border-bottom-right-radius: 15px;
         padding: 0 10px 0 0;
-        width: 40%;
-        transition: width 0.7s;
         cursor: pointer;
 
         .dish__price {
