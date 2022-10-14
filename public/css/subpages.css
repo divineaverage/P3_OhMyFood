@@ -443,8 +443,8 @@ button:hover {
 .menu__container .dish__container .dish-cont__col-2 {
   padding: 0px 0px 0px 0px;
   display: flex;
-  width: 10%;
-  transition: 0.7s;
+  width: 15%;
+  transition: 1s;
 }
 .menu__container .dish__container .dish-cont__col-2 .dish__price {
   font-size: 12px;
