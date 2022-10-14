@@ -282,7 +282,7 @@ button:hover {
   .menu__container {
     padding: 0px 10px 0px 10px;
     margin: 0px 40px 20px 40px;
-    width: 600px;
+    width: 350px;
     height: auto;
     position: absolute;
     top: 12%;
@@ -295,6 +295,7 @@ button:hover {
   .menu__container {
     top: 15%;
     left: 2%;
+    width: 500px;
   }
 }
 .menu__container .menu__head {
@@ -368,6 +369,7 @@ button:hover {
   border-radius: 15px;
   opacity: 0;
   animation: fadein 3s linear forwards;
+  width: 100%;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
 }
 .menu__container .dish__container:nth-of-type(2) {
@@ -441,16 +443,18 @@ button:hover {
   }
 }
 .menu__container .dish__container .dish-cont__col-2 {
-  padding: 0px 0px 0px 0px;
+  padding: 0px;
   display: flex;
   width: 15%;
   transition: 1s;
+  position: relative;
 }
 .menu__container .dish__container .dish-cont__col-2 .dish__price {
   font-size: 12px;
   align-self: flex-end;
-  justify-self: center;
-  padding: 0 10px 10px 0;
+  justify-self: flex-end;
+  margin: 0 -50px 10px 0;
+  position: absolute;
 }
 @media (min-width: 768px) {
   .menu__container .dish__container .dish-cont__col-2 .dish__price {

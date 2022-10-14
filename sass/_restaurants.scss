@@ -87,7 +87,7 @@
   @media (min-width: $breakpoint-tablet) {
     padding: 0px 10px 0px 10px;
     margin: 0px 40px 20px 40px;
-    width: 600px;
+    width: 350px;
     height: auto;
     position: absolute;
     top: 12%;
@@ -99,6 +99,7 @@
   @media (min-width: $breakpoint-desktop) {
     top: 15%;
     left: 2%;
+    width: 500px;
   }
 
   .menu__head {
@@ -146,6 +147,7 @@
     border-radius: 15px;
     opacity: 0;
     animation: fadein 3s linear forwards;
+    width: 100%;
     @include card__shadow;
 
     &:nth-of-type(2) {
@@ -228,16 +230,18 @@
     }
 
     .dish-cont__col-2 {
-      padding: 0px 0px 0px 0px;
+      padding: 0px;
       display: flex;
       width: 15%;
       transition: 1s;
+      position: relative;
 
       .dish__price {
         font-size: 12px;
         align-self: flex-end;
-        justify-self: center;
-        padding: 0 10px 10px 0;
+        justify-self: flex-end;
+        margin: 0 -50px 10px 0;
+        position: absolute;
 
         @media (min-width: $breakpoint-tablet) {
           font-size: 14px;
