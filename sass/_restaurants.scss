@@ -87,7 +87,7 @@
   @media (min-width: $breakpoint-tablet) {
     padding: 0px 10px 0px 10px;
     margin: 0px 40px 20px 40px;
-    width: auto;
+    width: 600px;
     height: auto;
     position: absolute;
     top: 12%;
@@ -236,6 +236,7 @@
       .dish__price {
         font-size: 12px;
         align-self: flex-end;
+        justify-self: center;
         padding: 0 10px 10px 0;
 
         @media (min-width: $breakpoint-tablet) {
