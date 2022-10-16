@@ -315,6 +315,12 @@ button:hover {
 @media (min-width: 768px) {
   .menu__container .menu__head .menu__name {
     font-size: 30px;
+    margin: 15px 0 0 0;
+  }
+}
+@media (min-width: 768px) {
+  .menu__container .menu__head .hearts {
+    margin: 7px 0 0 0;
   }
 }
 .menu__container .menu__head .hearts {

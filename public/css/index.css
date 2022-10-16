@@ -242,6 +242,7 @@ button:hover {
 @media (min-width: 768px) {
   .page__body .searchbox {
     font-size: 20px;
+    margin: 15px 0 0 0;
   }
 }
 .page__body .searchbox .search_bar[type=text] {
@@ -265,6 +266,7 @@ button:hover {
 @media (min-width: 768px) {
   .page__body .homehow__wrapper {
     flex-direction: row;
+    margin: 15px 0 15px 0;
   }
   .page__body .homehow__wrapper h3 {
     text-align: center;
@@ -417,6 +419,11 @@ button:hover {
     width: 48%;
   }
 }
+@media (min-width: 992px) {
+  .page__body .restaurants .restaurant__card {
+    width: 48.75%;
+  }
+}
 .page__body .restaurants .restaurant__card .home__imgbox {
   display: flex;
   align-items: center;
@@ -496,6 +503,7 @@ button:hover {
 }
 .page__body .restaurants .restaurant__card .restaurantcard__text .hearts {
   position: absolute;
+  margin: 10px 0 0 0;
   right: 0;
 }
 

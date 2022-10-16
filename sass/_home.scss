@@ -58,6 +58,7 @@
 
     @media (min-width: $breakpoint-tablet) {
       font-size: 20px;
+      margin: 15px 0 0 0;
     }
 
     .search_bar[type="text"] {
@@ -81,6 +82,7 @@
 
     @media (min-width: $breakpoint-tablet) {
       flex-direction: row;
+      margin: 15px 0 15px 0;
 
       h3 {
         text-align: center;
@@ -237,6 +239,10 @@
         width: 48%;
       }
 
+      @media (min-width: $breakpoint-desktop) {
+        width: 48.75%;
+      }
+
       .home__imgbox {
         display: flex;
         align-items: center;
@@ -291,6 +297,7 @@
 
         .hearts {
           position: absolute;
+          margin: 10px 0 0 0;
           right: 0;
         }
       }

@@ -120,8 +120,17 @@
 
       @media (min-width: $breakpoint-tablet) {
         font-size: 30px;
+        margin: 15px 0 0 0;
       }
     }
+
+    .hearts {
+
+      @media (min-width: $breakpoint-tablet) {
+        margin: 7px 0 0 0;
+      }
+    }
+
     @include favorite__heart;
   }
 
