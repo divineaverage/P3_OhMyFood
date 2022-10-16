@@ -75,7 +75,7 @@ a {
   text-decoration: none;
 }
 a:link {
-  font-color: black;
+  color: black;
 }
 a:visited {
   color: black;
@@ -105,9 +105,6 @@ h3 {
 
 ul {
   list-style-type: none;
-}
-ul a {
-  color: white;
 }
 
 li {
@@ -159,6 +156,9 @@ button:hover {
     font-size: 16px;
     width: 75%;
     margin-left: 10%;
+  }
+  .footer ul a {
+    color: white;
   }
 }
 @media (min-width: 768px) {
@@ -273,14 +273,14 @@ button:hover {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   margin: -45px 0px 0px 0px;
-  padding: 0px 10px 45px 10px;
+  padding: 0px 20px 45px 20px;
   z-index: 5;
   width: 100%;
   justify-content: center;
 }
 @media (min-width: 768px) {
   .menu__container {
-    padding: 0px 10px 0px 10px;
+    padding: 0px 20px 0px 20px;
     margin: 0px 40px 20px 40px;
     width: 350px;
     height: auto;
@@ -302,7 +302,7 @@ button:hover {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 20px 10px 10px 10px;
+  padding: 20px 0px 10px 0px;
 }
 @media (min-width: 992px) {
   .menu__container .menu__head {
