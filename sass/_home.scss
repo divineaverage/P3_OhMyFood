@@ -97,8 +97,8 @@
 
       @media (min-width: $breakpoint-tablet) {
         width: 49%;
-        padding: 0 2% 5% 2%;
-        margin: 30px;
+        padding: 0 30px 40px 30px;
+        margin: 30px 15px 30px 30px;
         border-radius: 15px;
       }
 
@@ -117,15 +117,15 @@
     .howitworks {
       display: flex;
       flex-direction: column;
-      padding: 20px 10% 10% 10%;
+      padding: 20px;
       margin: 30px 0 30px 0;
 
       @media (min-width: $breakpoint-tablet) {
         justify-content: center;
         align-content: center;
         width: 49%;
-        padding: 0 2% 5% 2%;
-        margin: 30px;
+        padding: 0 30px 40px 30px;
+        margin: 30px 30px 30px 15px;
         border-radius: 15px;
         background-color: lighten($primary-color, 33%);
       }
@@ -197,9 +197,12 @@
     padding: 60px 30px 0px 0px;
     background-color: $light-background;
     width: 100%;
+    margin: 0 15px 0 15px;
 
     @media (min-width: $breakpoint-tablet) {
       background-color: white;
+      padding: 0;
+      margin: 0;
     }
 
     > h3 {
@@ -224,14 +227,14 @@
     .restaurant__card {
       background: white;
       border-radius: 20px;
-      margin: 15px 0px 15px 0px;
       padding: 0px;
+      margin: 15px 0 15px 0;
       font-size: 14px;
       position: relative;
       @include card__shadow;
 
       @media (min-width: $breakpoint-tablet) {
-        width: 47%;
+        width: 48%;
       }
 
       .home__imgbox {
